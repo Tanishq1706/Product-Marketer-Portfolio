@@ -31,13 +31,6 @@
       background: radial-gradient(circle at 50% 100%, #ff4500 0%, #b32d00 40%, #080808 85%);
     }
 
-    /* Custom Glass Pill */
-    .glass-pill {
-      background: rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-    }
-
     /* Floating Animated Logos in Text Section */
     .floating-logo {
       position: absolute;
@@ -88,10 +81,8 @@
     </a>
   </nav>
 
-  <!-- 1. HERO SECTION (ELENA VOSS EXACT HERO) -->
+  <!-- 1. HERO SECTION -->
   <section class="relative min-h-screen hero-bg flex flex-col justify-between px-6 md:px-16 pt-32 pb-12 overflow-hidden">
-    
-    <!-- Hero Main Heading & Badges -->
     <div class="max-w-5xl z-10 my-auto">
       <h1 class="text-5xl sm:text-7xl lg:text-9xl font-extrabold tracking-tight leading-[0.95] text-white">
         Translating <br/>
@@ -99,7 +90,7 @@
       </h1>
     </div>
 
-    <!-- Side Floating Badges (From Video) -->
+    <!-- Side Floating Badges -->
     <div class="absolute right-6 md:right-16 top-1/2 -translate-y-1/2 hidden md:flex flex-col gap-12 text-right z-10">
       <div>
         <p class="text-xs uppercase tracking-widest text-orange-200 font-semibold">GTM & Revenue</p>
@@ -132,58 +123,57 @@
     </div>
   </section>
 
-  <!-- 2. AWARD WINNING WORK (HOVER ACCORDION SECTION WITH IMAGE PREVIEW) -->
-  <section class="py-24 px-6 md:px-16 max-w-7xl mx-auto border-t border-neutral-900">
-    <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-4">
-      <h2 class="text-4xl md:text-6xl font-extrabold tracking-tight">Selected Work & Impact</h2>
-      <p class="text-neutral-400 text-sm max-w-xs">Hover over campaigns to preview live platforms and strategic deliverables.</p>
+  <!-- 2. STICKY SCROLL REVEAL SECTION (ACETERNITY UI PORT) -->
+  <section class="py-24 px-6 md:px-16 border-t border-neutral-900">
+    <div class="max-w-7xl mx-auto mb-12">
+      <h2 class="text-4xl md:text-6xl font-extrabold tracking-tight">Key Initiatives & Impact</h2>
+      <p class="text-neutral-400 text-sm mt-2">Scroll through to explore high-impact growth stories and deliverables.</p>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-      <!-- List Accordion -->
-      <div class="lg:col-span-6 space-y-2">
+    <div id="sticky-scroll-container" class="relative flex justify-between gap-10 max-w-7xl mx-auto h-[30rem] overflow-y-auto no-scrollbar rounded-3xl bg-neutral-950 p-6 md:p-10 border border-neutral-800">
+      
+      <!-- Left Scrolling Content Panel -->
+      <div class="w-full lg:w-1/2 space-y-28 my-10">
         
-        <div class="work-item group p-6 rounded-2xl border border-neutral-800 hover:border-orange-500 bg-neutral-900/50 transition cursor-pointer" data-img="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1000&q=80">
-          <div class="flex justify-between items-center">
-            <h3 class="text-2xl font-bold group-hover:text-orange-400 transition">Xindus Logistics GTM</h3>
-            <span class="text-xs font-mono text-neutral-500">Product Marketing</span>
-          </div>
-          <p class="text-xs text-neutral-400 mt-2">Doubled weekly revenue (₹6L → ₹12L) & won back 110 enterprise accounts through objection analysis.</p>
+        <div class="sticky-step transition-opacity duration-300 opacity-100" data-index="0">
+          <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">Xindus Cross-Border GTM</h3>
+          <p class="text-neutral-400 text-base leading-relaxed">
+            Translated complex operational data into clear storytelling narratives for Sales, Ops, and Tech teams. Developed a segment-led messaging strategy for a low-adoption vertical that doubled weekly revenue from ₹6L to ₹12L and won back 110 dormant enterprise clients.
+          </p>
         </div>
 
-        <div class="work-item group p-6 rounded-2xl border border-neutral-800 hover:border-orange-500 bg-neutral-900/50 transition cursor-pointer" data-img="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=80">
-          <div class="flex justify-between items-center">
-            <h3 class="text-2xl font-bold group-hover:text-orange-400 transition">UNIVO Funnel Analytics</h3>
-            <span class="text-xs font-mono text-neutral-500">Data Analytics</span>
-          </div>
-          <p class="text-xs text-neutral-400 mt-2">Audited 500+ counselor funnels & reduced idle time to under 10%, lifting conversion from 12% to 20%.</p>
+        <div class="sticky-step transition-opacity duration-300 opacity-30" data-index="1">
+          <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">UNIVO Funnel Optimization</h3>
+          <p class="text-neutral-400 text-base leading-relaxed">
+            Audited sales funnels across 500+ counselors, reducing idle time to under 10%. Applied CRM fixes and real-time Power BI reporting to lift sales conversion rates directly from 12% to 20%.
+          </p>
         </div>
 
-        <div class="work-item group p-6 rounded-2xl border border-neutral-800 hover:border-orange-500 bg-neutral-900/50 transition cursor-pointer" data-img="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&w=1000&q=80">
-          <div class="flex justify-between items-center">
-            <h3 class="text-2xl font-bold group-hover:text-orange-400 transition">225K+ Organic SEO Engine</h3>
-            <span class="text-xs font-mono text-neutral-500">Growth & Content</span>
-          </div>
-          <p class="text-xs text-neutral-400 mt-2">Wikipedia citation-gap SEO strategy delivering Google Page 1 ranks & 225K+ impressions.</p>
+        <div class="sticky-step transition-opacity duration-300 opacity-30" data-index="2">
+          <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">Organic Growth & SEO Engine</h3>
+          <p class="text-neutral-400 text-base leading-relaxed">
+            Leveraged a Wikipedia citation-gap strategy to build a 100+ article content engine, securing Page 1 Google rankings, driving 225K+ organic impressions, and acquiring 2.5K+ clicks.
+          </p>
         </div>
 
-        <div class="work-item group p-6 rounded-2xl border border-neutral-800 hover:border-orange-500 bg-neutral-900/50 transition cursor-pointer" data-img="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1000&q=80">
-          <div class="flex justify-between items-center">
-            <h3 class="text-2xl font-bold group-hover:text-orange-400 transition">Interactive Rate Tools</h3>
-            <span class="text-xs font-mono text-neutral-500">UX & Web Dev</span>
-          </div>
-          <p class="text-xs text-neutral-400 mt-2">Built live calculators for IndiaPost Rates & Export Duty eliminating operational friction.</p>
+        <div class="sticky-step transition-opacity duration-300 opacity-30" data-index="3">
+          <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">Interactive Tools & UX Mapping</h3>
+          <p class="text-neutral-400 text-base leading-relaxed">
+            Designed interactive rate calculators and conducted user journey mapping to refine onboarding flows, eliminating user drop-offs and raising overall digital engagement by 15%.
+          </p>
         </div>
 
       </div>
 
-      <!-- Preview Image Display -->
-      <div class="lg:col-span-6 h-[400px] lg:h-[480px] rounded-3xl overflow-hidden border border-neutral-800 relative shadow-2xl">
-        <img id="previewImage" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1000&q=80" alt="Work Preview" class="w-full h-full object-cover transition-all duration-500 scale-105"/>
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-8">
-          <span class="text-xs font-mono uppercase text-orange-400 font-bold tracking-widest">Interactive Work Showcase</span>
+      <!-- Right Sticky Preview Card -->
+      <div class="hidden lg:flex sticky top-0 h-80 w-1/2 rounded-2xl overflow-hidden items-center justify-center transition-all duration-700 border border-white/10 shadow-2xl my-auto" id="sticky-preview">
+        <div id="sticky-preview-content" class="text-center p-8 transition-opacity duration-300">
+          <i class="fa-solid fa-chart-line text-5xl mb-4 text-white"></i>
+          <h4 class="text-2xl font-bold text-white" id="sticky-card-title">₹12L Weekly Revenue</h4>
+          <p class="text-xs text-white/80 mt-2" id="sticky-card-desc">Xindus GTM Transformation</p>
         </div>
       </div>
+
     </div>
   </section>
 
@@ -221,23 +211,21 @@
         </div>
         <h3 class="text-xl font-bold mb-3">Future-Proofed Organic Engine</h3>
         <p class="text-sm text-neutral-400 leading-relaxed">
-          Build high-authority SEO assets and PR coverage (Times Now, ABP, MSN) driving consistent organic traffic.
+          Build high-authority SEO assets and PR coverage driving consistent organic traffic and qualified leads.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- 4. HORIZONTAL SERVICES CAROUSEL (FROM VIDEO) -->
+  <!-- 4. HORIZONTAL SERVICES CAROUSEL -->
   <section class="py-24 px-6 md:px-16 border-t border-neutral-900 overflow-hidden">
     <div class="max-w-7xl mx-auto mb-12">
       <h2 class="text-4xl md:text-6xl font-extrabold tracking-tight">Strategy & Competencies</h2>
       <p class="text-neutral-400 text-sm mt-2">Core expertise across product marketing, analytics, and content engines.</p>
     </div>
 
-    <!-- Horizontal Scroll Cards Container -->
     <div class="flex gap-6 overflow-x-auto no-scrollbar pb-8 pt-4 snap-x">
       
-      <!-- Card 1 (Highlighted) -->
       <div class="w-80 md:w-96 flex-shrink-0 bg-gradient-to-b from-orange-600 to-red-700 p-8 rounded-3xl flex flex-col justify-between h-96 snap-start shadow-xl">
         <div class="flex justify-between items-start">
           <span class="text-xs uppercase font-extrabold tracking-widest text-white/80">01</span>
@@ -254,7 +242,6 @@
         </div>
       </div>
 
-      <!-- Card 2 -->
       <div class="w-80 md:w-96 flex-shrink-0 bg-neutral-900 border border-neutral-800 p-8 rounded-3xl flex flex-col justify-between h-96 snap-start hover:border-neutral-600 transition">
         <div class="flex justify-between items-start">
           <span class="text-xs uppercase font-extrabold tracking-widest text-neutral-500">02</span>
@@ -271,7 +258,6 @@
         </div>
       </div>
 
-      <!-- Card 3 -->
       <div class="w-80 md:w-96 flex-shrink-0 bg-neutral-900 border border-neutral-800 p-8 rounded-3xl flex flex-col justify-between h-96 snap-start hover:border-neutral-600 transition">
         <div class="flex justify-between items-start">
           <span class="text-xs uppercase font-extrabold tracking-widest text-neutral-500">03</span>
@@ -288,7 +274,6 @@
         </div>
       </div>
 
-      <!-- Card 4 -->
       <div class="w-80 md:w-96 flex-shrink-0 bg-neutral-900 border border-neutral-800 p-8 rounded-3xl flex flex-col justify-between h-96 snap-start hover:border-neutral-600 transition">
         <div class="flex justify-between items-start">
           <span class="text-xs uppercase font-extrabold tracking-widest text-neutral-500">04</span>
@@ -300,7 +285,7 @@
             <li>• Dormant Account Win-Backs</li>
             <li>• Whitespace Opportunity Planning</li>
             <li>• Cross-Departmental SLAs</li>
-            <li>• PR Pitching (Times Now, ABP)</li>
+            <li>• PR Pitching & Brand Placement</li>
           </ul>
         </div>
       </div>
@@ -308,21 +293,24 @@
     </div>
   </section>
 
-  <!-- 5. FLOATING BRAND LOGOS SECTION (ELENA VOSS SIGNATURE EFFECT) -->
+  <!-- 5. FLOATING BRAND LOGOS SECTION (FIXED SVG LOGOS) -->
   <section class="py-32 px-6 relative border-t border-neutral-900 min-h-[60vh] flex items-center justify-center overflow-hidden">
     
-    <!-- Floating Tool Logos in Background -->
-    <div class="floating-logo top-12 left-[10%] opacity-80">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt="Power BI" class="w-12 h-12 md:w-16 md:h-16"/>
+    <!-- Floating SVGs -->
+    <div class="floating-logo top-12 left-[10%] opacity-80 bg-black/60 p-3 rounded-2xl border border-neutral-800">
+      <svg class="w-8 h-8 text-yellow-500" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg>
     </div>
-    <div class="floating-logo top-20 right-[12%] opacity-80" style="animation-delay: -2s;">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/7/77/Google_Analytics_logo.svg" alt="Google Analytics" class="w-12 h-12 md:w-16 md:h-16"/>
+    
+    <div class="floating-logo top-20 right-[12%] opacity-80 bg-black/60 p-3 rounded-2xl border border-neutral-800" style="animation-delay: -2s;">
+      <svg class="w-8 h-8 text-orange-500" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
     </div>
-    <div class="floating-logo bottom-16 left-[15%] opacity-80" style="animation-delay: -4s;">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg" alt="Figma" class="w-10 h-10 md:w-14 md:h-14"/>
+
+    <div class="floating-logo bottom-16 left-[15%] opacity-80 bg-black/60 p-3 rounded-2xl border border-neutral-800" style="animation-delay: -4s;">
+      <svg class="w-8 h-8 text-purple-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a5 5 0 0 0-5 5 5 5 0 0 0 5 5 5 5 0 0 0 5-5 5 5 0 0 0-5-5zm-5 10a5 5 0 0 0-5 5 5 5 0 0 0 5 5 5 5 0 0 0 5-5 5 5 0 0 0-5-5z"/></svg>
     </div>
-    <div class="floating-logo bottom-20 right-[18%] opacity-80" style="animation-delay: -1s;">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/HubSpot_Logo.svg" alt="HubSpot" class="w-12 h-12 md:w-16 md:h-16"/>
+
+    <div class="floating-logo bottom-20 right-[18%] opacity-80 bg-black/60 p-3 rounded-2xl border border-neutral-800" style="animation-delay: -1s;">
+      <svg class="w-8 h-8 text-orange-600" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
     </div>
 
     <!-- Center Typography -->
@@ -331,49 +319,12 @@
         Trusted by Enterprise Teams & Built for Scalable Brands.
       </h2>
       <p class="text-neutral-400 text-sm md:text-base mt-6 max-w-xl mx-auto">
-        Powered by industry-standard analytics, design, and growth tools including Power BI, Google Analytics, Figma, SEMrush, HubSpot, and Claude AI.
+        Powered by industry-standard analytics, design, and growth tools including Power BI, Google Analytics, Figma, SEMrush, HubSpot, and AI workflows.
       </p>
     </div>
   </section>
 
-  <!-- 6. INTERACTIVE CLIENT TESTIMONIAL CAROUSEL (FROM VIDEO) -->
-  <section class="py-24 px-6 md:px-16 max-w-5xl mx-auto border-t border-neutral-900">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl md:text-5xl font-extrabold">Don't Take It from Us,<br/>Take It from Our Work</h2>
-    </div>
-
-    <!-- Testimonial Card with Avatars -->
-    <div class="bg-neutral-900/90 border border-neutral-800 p-8 md:p-12 rounded-3xl relative shadow-2xl text-center">
-      
-      <!-- Avatar Selector Dots -->
-      <div class="flex justify-center items-center gap-4 mb-8">
-        <div class="t-avatar w-12 h-12 rounded-full border-2 border-orange-500 overflow-hidden cursor-pointer scale-110 transition" data-quote="0">
-          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" alt="Client 1" class="w-full h-full object-cover"/>
-        </div>
-        <div class="t-avatar w-10 h-10 rounded-full border border-neutral-700 opacity-60 overflow-hidden cursor-pointer transition" data-quote="1">
-          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" alt="Client 2" class="w-full h-full object-cover"/>
-        </div>
-      </div>
-
-      <!-- Dynamic Quote Text -->
-      <div id="testimonialQuote" class="max-w-2xl mx-auto min-h-[120px] flex flex-col justify-center">
-        <h3 class="text-xl font-bold text-orange-400">Xindus Trade Networks</h3>
-        <p class="text-xs text-neutral-400 uppercase tracking-widest mt-1 mb-4">Enterprise Cross-Border Logistics</p>
-        <p class="text-base md:text-lg text-neutral-200 font-medium leading-relaxed">
-          "Working with Tanishq completely transformed our segment messaging. Weekly revenue doubled from ₹6L to ₹12L, and his objection-analysis outreach won back 110 dormant enterprise clients in Q1."
-        </p>
-      </div>
-
-      <!-- Navigation Arrows -->
-      <div class="flex justify-center gap-4 mt-8">
-        <button id="prevBtn" class="w-10 h-10 rounded-full bg-neutral-800 hover:bg-orange-600 transition flex items-center justify-center text-sm"><i class="fa-solid fa-arrow-left"></i></button>
-        <button id="nextBtn" class="w-10 h-10 rounded-full bg-neutral-800 hover:bg-orange-600 transition flex items-center justify-center text-sm"><i class="fa-solid fa-arrow-right"></i></button>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- 7. FAQ ACCORDION SECTION (FROM VIDEO) -->
+  <!-- 6. TAILORED FAQ ACCORDION SECTION -->
   <section class="py-24 px-6 md:px-16 max-w-4xl mx-auto border-t border-neutral-900">
     <h2 class="text-3xl md:text-5xl font-extrabold mb-12 text-center">Frequently Asked Questions</h2>
 
@@ -381,38 +332,58 @@
       
       <div class="faq-item border border-neutral-800 rounded-2xl bg-neutral-900/40 overflow-hidden">
         <button class="faq-btn w-full p-6 text-left flex justify-between items-center font-bold text-lg hover:text-orange-400 transition">
-          <span>What tools do you use for analytics and product marketing?</span>
+          <span>1. How do you translate complex product features or technical data into simple, customer-focused messaging?</span>
           <i class="fa-solid fa-plus text-sm transition-transform duration-300"></i>
         </button>
-        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 px-6 text-sm text-neutral-400">
-          <p class="pb-6">I leverage Power BI, Google Analytics, Excel, HubSpot CRM, SEMrush, Figma, Canva, and AI suites like Claude & ChatGPT for end-to-end strategy, funnel audits, and copy deployment.</p>
+        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 px-6 text-sm text-neutral-400 leading-relaxed">
+          <p class="pb-6">At Xindus, I specialized in converting complex operational data into clear storytelling narratives for Sales, Ops, and Tech, which helped build trust and resolve recurring service friction. Additionally, I developed a segment-led messaging strategy for a low-adoption vertical that doubled weekly revenue from ₹6L to ₹12L.</p>
         </div>
       </div>
 
       <div class="faq-item border border-neutral-800 rounded-2xl bg-neutral-900/40 overflow-hidden">
         <button class="faq-btn w-full p-6 text-left flex justify-between items-center font-bold text-lg hover:text-orange-400 transition">
-          <span>How do you approach dormant account win-backs?</span>
+          <span>2. What is your experience with SEO, copywriting, and driving organic growth?</span>
           <i class="fa-solid fa-plus text-sm transition-transform duration-300"></i>
         </button>
-        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 px-6 text-sm text-neutral-400">
-          <p class="pb-6">I conduct structured objection-analysis campaigns, mapping specific service friction points to custom messaging flows, as demonstrated in winning back 110 enterprise accounts at Xindus.</p>
+        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 px-6 text-sm text-neutral-400 leading-relaxed">
+          <p class="pb-6">As a Content Marketer at the All India Institute of Occult Science, I conducted keyword and audience-gap research (using a Wikipedia citation-gap strategy) that secured Page 1 Google rankings. I built a 100+ article content engine generating 225K+ impressions and 2.5K+ organic clicks, backed by hands-on expertise in SEO/SEM, copywriting, and landing page content.</p>
         </div>
       </div>
 
       <div class="faq-item border border-neutral-800 rounded-2xl bg-neutral-900/40 overflow-hidden">
         <button class="faq-btn w-full p-6 text-left flex justify-between items-center font-bold text-lg hover:text-orange-400 transition">
-          <span>What is your educational background?</span>
+          <span>3. How do you approach GTM messaging, collateral creation, and cross-functional alignment?</span>
           <i class="fa-solid fa-plus text-sm transition-transform duration-300"></i>
         </button>
-        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 px-6 text-sm text-neutral-400">
-          <p class="pb-6">I hold an MBA in Marketing & Business Analytics from Delhi Technological University (DTU) and a B.A. from Delhi University, backed by certifications in Google Ads and Digital Marketing.</p>
+        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 px-6 text-sm text-neutral-400 leading-relaxed">
+          <p class="pb-6">I have end-to-end experience aligning messaging across functions. At Xindus, I aligned strategic insights across six core departments to maintain brand consistency from acquisition to retention. I also conducted UX research and journey mapping to refine messaging flows, which improved conversion rates by 15%.</p>
+        </div>
+      </div>
+
+      <div class="faq-item border border-neutral-800 rounded-2xl bg-neutral-900/40 overflow-hidden">
+        <button class="faq-btn w-full p-6 text-left flex justify-between items-center font-bold text-lg hover:text-orange-400 transition">
+          <span>4. Are you comfortable using AI workflows and design tools like Figma?</span>
+          <i class="fa-solid fa-plus text-sm transition-transform duration-300"></i>
+        </button>
+        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 px-6 text-sm text-neutral-400 leading-relaxed">
+          <p class="pb-6">Yes. My growth and strategy toolkit includes Figma, Canva, PowerPoint, HubSpot CRM, SEMrush, and Ahrefs. I leverage Claude and ChatGPT for research, ideation, and content workflows, and previously proposed AI-driven onboarding solutions during my data analytics role at UNIVO Ed Tech.</p>
+        </div>
+      </div>
+
+      <div class="faq-item border border-neutral-800 rounded-2xl bg-neutral-900/40 overflow-hidden">
+        <button class="faq-btn w-full p-6 text-left flex justify-between items-center font-bold text-lg hover:text-orange-400 transition">
+          <span>5. How do you use data and campaign analytics to optimize customer acquisition and retention?</span>
+          <i class="fa-solid fa-plus text-sm transition-transform duration-300"></i>
+        </button>
+        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 px-6 text-sm text-neutral-400 leading-relaxed">
+          <p class="pb-6">At UNIVO Ed Tech, I audited the sales funnel for 500+ counsellors and applied CRM fixes that increased conversion rates from 12% to 20%. At Xindus, I led an objection-analysis outreach campaign targeting dormant enterprise accounts, winning back 110 clients in Q1.</p>
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- 8. FOOTER (EXACT ELENA VOSS GLOW FOOTER) -->
+  <!-- 7. FOOTER -->
   <footer id="contact" class="footer-bg pt-24 pb-12 px-6 md:px-16 rounded-t-[3rem] border-t border-white/10">
     <div class="max-w-6xl mx-auto flex flex-col justify-between min-h-[60vh]">
       <div>
@@ -458,64 +429,66 @@
       });
     }
 
-    // 3. Award Work Image Hover Preview
-    const workItems = document.querySelectorAll('.work-item');
-    const previewImg = document.getElementById('previewImage');
+    // 3. Aceternity UI Sticky Scroll Replica Logic
+    const stickyContainer = document.getElementById('sticky-scroll-container');
+    const stickySteps = document.querySelectorAll('.sticky-step');
+    const stickyPreview = document.getElementById('sticky-preview');
+    const stickyCardTitle = document.getElementById('sticky-card-title');
+    const stickyCardDesc = document.getElementById('sticky-card-desc');
 
-    workItems.forEach(item => {
-      item.addEventListener('mouseenter', () => {
-        const newImg = item.getAttribute('data-img');
-        previewImg.style.opacity = '0';
-        setTimeout(() => {
-          previewImg.src = newImg;
-          previewImg.style.opacity = '1';
-        }, 150);
-      });
-    });
-
-    // 4. Testimonials Slider Mechanism
-    const testimonials = [
+    const cardData = [
       {
-        company: "Xindus Trade Networks",
-        role: "Enterprise Cross-Border Logistics",
-        quote: `"Working with Tanishq completely transformed our segment messaging. Weekly revenue doubled from ₹6L to ₹12L, and his objection-analysis outreach won back 110 dormant enterprise clients in Q1."`
+        bg: "linear-gradient(to bottom right, #ea580c, #dc2626)",
+        title: "₹12L Weekly Revenue",
+        desc: "Xindus GTM Transformation"
       },
       {
-        company: "UNIVO Ed Tech",
-        role: "Higher Education Analytics",
-        quote: `"Tanishq audited funnels across 500+ counselors, identifying crucial bottlenecks. His CRM interventions and time-and-motion fixes lifted our sales conversions directly from 12% to 20%."`
+        bg: "linear-gradient(to bottom right, #0284c7, #0d9488)",
+        title: "12% → 20% Conversion",
+        desc: "UNIVO Funnel Optimization"
+      },
+      {
+        bg: "linear-gradient(to bottom right, #7c3aed, #db2777)",
+        title: "225K+ Impressions",
+        desc: "Organic SEO Engine"
+      },
+      {
+        bg: "linear-gradient(to bottom right, #059669, #16a34a)",
+        title: "+15% Conversion Rate",
+        desc: "Interactive Calculators & UX"
       }
     ];
 
-    let currentTestimonial = 0;
-    const avatars = document.querySelectorAll('.t-avatar');
-    const quoteContainer = document.getElementById('testimonialQuote');
+    stickyPreview.style.background = cardData[0].bg;
 
-    function updateTestimonial(index) {
-      currentTestimonial = index;
-      avatars.forEach((av, i) => {
-        if(i === index) {
-          av.classList.add('border-orange-500', 'scale-110');
-          av.classList.remove('border-neutral-700', 'opacity-60');
-        } else {
-          av.classList.remove('border-orange-500', 'scale-110');
-          av.classList.add('border-neutral-700', 'opacity-60');
+    stickyContainer.addEventListener('scroll', () => {
+      let activeIndex = 0;
+      const containerTop = stickyContainer.scrollTop;
+      const containerHeight = stickyContainer.clientHeight;
+
+      stickySteps.forEach((step, index) => {
+        const stepTop = step.offsetTop - stickyContainer.offsetTop;
+        if (containerTop >= stepTop - containerHeight / 3) {
+          activeIndex = index;
         }
       });
 
-      const t = testimonials[index];
-      quoteContainer.innerHTML = `
-        <h3 class="text-xl font-bold text-orange-400">${t.company}</h3>
-        <p class="text-xs text-neutral-400 uppercase tracking-widest mt-1 mb-4">${t.role}</p>
-        <p class="text-base md:text-lg text-neutral-200 font-medium leading-relaxed">${t.quote}</p>
-      `;
-    }
+      stickySteps.forEach((step, index) => {
+        if (index === activeIndex) {
+          step.classList.remove('opacity-30');
+          step.classList.add('opacity-100');
+        } else {
+          step.classList.remove('opacity-100');
+          step.classList.add('opacity-30');
+        }
+      });
 
-    avatars.forEach((av, i) => av.addEventListener('click', () => updateTestimonial(i)));
-    document.getElementById('prevBtn').addEventListener('click', () => updateTestimonial((currentTestimonial - 1 + testimonials.length) % testimonials.length));
-    document.getElementById('nextBtn').addEventListener('click', () => updateTestimonial((currentTestimonial + 1) % testimonials.length));
+      stickyPreview.style.background = cardData[activeIndex].bg;
+      stickyCardTitle.innerText = cardData[activeIndex].title;
+      stickyCardDesc.innerText = cardData[activeIndex].desc;
+    });
 
-    // 5. FAQ Accordions
+    // 4. FAQ Accordion Logic
     const faqBtns = document.querySelectorAll('.faq-btn');
     faqBtns.forEach(btn => {
       btn.addEventListener('click', () => {
