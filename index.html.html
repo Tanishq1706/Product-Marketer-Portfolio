@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tanishq Kumar — Product Marketing Portfolio</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lenis Smooth Scroll CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.18/dist/lenis.css">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap');
+    
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #0d0d0d;
+      color: #ffffff;
+      overflow-x: hidden;
+    }
+
+    .hero-gradient {
+      background: linear-gradient(135deg, #f03e00 0%, #b32400 50%, #0d0d0d 100%);
+    }
+
+    .footer-gradient {
+      background: linear-gradient(180deg, #0d0d0d 0%, #d43500 70%, #ff4500 100%);
+    }
+
+    .glass-pill {
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    /* Infinite Marquee Animation for Hero Background */
+    @keyframes marqueeTrack {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    
+    .animate-marquee {
+      display: flex;
+      width: 200%;
+      animation: marqueeTrack 25s linear infinite;
+    }
+  </style>
+</head>
+<body class="bg-[#0d0d0d] text-white antialiased">
+
+  <!-- FLOATING STICKY HEADER BUTTON -->
+  <div class="fixed top-6 right-6 z-50">
+    <a href="#contact" class="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-black font-semibold text-sm shadow-xl hover:scale-105 transition transform">
+      <span class="w-2 h-2 rounded-full bg-orange-600 animate-pulse"></span>
+      Get in Touch
+    </a>
+  </div>
+
+  <!-- MAIN NAVIGATION -->
+  <nav class="fixed top-6 left-6 z-50 mix-blend-difference">
+    <a href="#" class="text-xl font-extrabold tracking-tighter uppercase">TANISHQ KUMAR</a>
+  </nav>
+
+  <!-- 1. HERO SHRINK & BACKGROUND REVEAL SECTION -->
+  <section class="hero-pin-wrapper relative h-[200vh] bg-[#0d0d0d]">
+    <div class="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center">
+      
+      <!-- Scrolling Carousel Background (Revealed as Hero Shrinks) -->
+      <div class="hero-bg-carousel absolute inset-0 opacity-40 pointer-events-none flex flex-col justify-center gap-6 scale-110">
+        <!-- Row 1 -->
+        <div class="animate-marquee gap-6">
+          <div class="w-80 h-48 bg-neutral-800 rounded-2xl flex-shrink-0 p-4 border border-neutral-700 flex flex-col justify-end">
+            <span class="text-xs text-orange-400 font-bold">XINDUS GLOBAL</span>
+            <span class="font-bold text-lg">Cross-Border Logistics GTM</span>
+          </div>
+          <div class="w-80 h-48 bg-neutral-800 rounded-2xl flex-shrink-0 p-4 border border-neutral-700 flex flex-col justify-end">
+            <span class="text-xs text-orange-400 font-bold">BIVS PLATFORM</span>
+            <span class="font-bold text-lg">Landing Page Copywriting</span>
+          </div>
+          <div class="w-80 h-48 bg-neutral-800 rounded-2xl flex-shrink-0 p-4 border border-neutral-700 flex flex-col justify-end">
+            <span class="text-xs text-orange-400 font-bold">INDIA POST TOOL</span>
+            <span class="font-bold text-lg">Interactive Rates Engine</span>
+          </div>
+          <div class="w-80 h-48 bg-neutral-800 rounded-2xl flex-shrink-0 p-4 border border-neutral-700 flex flex-col justify-end">
+            <span class="text-xs text-orange-400 font-bold">OCCULT SCIENCE</span>
+            <span class="font-bold text-lg">225K+ Organic Impressions</span>
+          </div>
+          <!-- Loop Duplicates -->
+          <div class="w-80 h-48 bg-neutral-800 rounded-2xl flex-shrink-0 p-4 border border-neutral-700 flex flex-col justify-end">
+            <span class="text-xs text-orange-400 font-bold">XINDUS GLOBAL</span>
+            <span class="font-bold text-lg">Cross-Border Logistics GTM</span>
+          </div>
+          <div class="w-80 h-48 bg-neutral-800 rounded-2xl flex-shrink-0 p-4 border border-neutral-700 flex flex-col justify-end">
+            <span class="text-xs text-orange-400 font-bold">BIVS PLATFORM</span>
+            <span class="font-bold text-lg">Landing Page Copywriting</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Card with Embedded Portrait Image -->
+      <div class="hero-card hero-gradient w-full h-full p-8 md:p-16 flex flex-col justify-between z-10 origin-center transition-all relative overflow-hidden">
+        
+        <!-- Embedded Cutout Image Placement -->
+        <div class="absolute right-0 bottom-0 top-0 w-full md:w-1/2 h-full z-0 flex items-end justify-center md:justify-end pointer-events-none overflow-hidden">
+          <img 
+            src="tanishq-cutout.jpg"
+            alt="Tanishq Kumar" 
+            class="h-[85%] md:h-[95%] w-auto object-contain object-bottom drop-shadow-[0_20px_50px_rgba(0,0,0,0.6)]"
+          >
+        </div>
+
+        <!-- Top Header Tags -->
+        <div class="flex justify-between items-start w-full z-10">
+          <span class="glass-pill text-xs uppercase tracking-widest px-4 py-2 rounded-full">
+            Product Marketing Specialist
+          </span>
+        </div>
+
+        <!-- Hero Heading and Subtext -->
+        <div class="max-w-3xl z-10 my-auto">
+          <h1 class="text-4xl md:text-7xl font-extrabold tracking-tight leading-[0.95] mb-6 drop-shadow-lg">
+            Translating Complex Products into High-Converting Stories
+          </h1>
+          <p class="text-base md:text-xl text-neutral-100 max-w-xl font-normal leading-relaxed drop-shadow-md">
+            I bridge product features and user adoption through high-converting landing page copy, interactive tools, Canva onboarding walkthroughs, and Figma wireframes.
+          </p>
+        </div>
+
+        <!-- Bottom Stat Badge -->
+        <div class="z-10 flex gap-6 items-center">
+          <div class="glass-pill px-4 py-2 rounded-2xl flex items-center gap-3">
+            <span class="text-2xl font-extrabold text-orange-300">225K+</span>
+            <span class="text-xs uppercase tracking-wider text-neutral-200">Organic Traffic <br/>Generated</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 2. PINNED TAB-BASED WORK SHOWCASE SECTION -->
+  <section class="tabs-pin-wrapper relative h-[400vh] bg-[#0d0d0d] border-t border-neutral-800">
+    <div class="sticky top-0 h-screen w-full flex flex-col md:flex-row items-center px-6 md:px-16 gap-8 md:gap-16">
+      
+      <!-- Left Column: Interactive Timeline Navigation Tabs -->
+      <div class="w-full md:w-1/3 flex-shrink-0">
+        <p class="text-xs font-bold uppercase tracking-widest text-neutral-500 mb-6">Featured Work & Live Proofs</p>
+        
+        <div class="space-y-6">
+          <div class="tab-item cursor-pointer flex items-center gap-4 text-orange-500 font-bold transition-all" data-tab="0">
+            <span class="tab-dot w-3 h-3 rounded-full bg-orange-500 transition-all"></span>
+            <span class="text-lg md:text-2xl">01. Live Landing Pages & Copy</span>
+          </div>
+
+          <div class="tab-item cursor-pointer flex items-center gap-4 text-neutral-500 hover:text-white transition-all" data-tab="1">
+            <span class="tab-dot w-2 h-2 rounded-full bg-neutral-700 transition-all"></span>
+            <span class="text-lg md:text-2xl">02. Product Demos & Onboarding</span>
+          </div>
+
+          <div class="tab-item cursor-pointer flex items-center gap-4 text-neutral-500 hover:text-white transition-all" data-tab="2">
+            <span class="tab-dot w-2 h-2 rounded-full bg-neutral-700 transition-all"></span>
+            <span class="text-lg md:text-2xl">03. Interactive Calculators & Tools</span>
+          </div>
+
+          <div class="tab-item cursor-pointer flex items-center gap-4 text-neutral-500 hover:text-white transition-all" data-tab="3">
+            <span class="tab-dot w-2 h-2 rounded-full bg-neutral-700 transition-all"></span>
+            <span class="text-lg md:text-2xl">04. SEO Engine & Ranking Proof</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Card Container -->
+      <div class="w-full md:w-2/3 h-[60vh] md:h-[70vh] relative">
+        
+        <!-- Card 1: Landing Pages -->
+        <div class="tab-card absolute inset-0 bg-neutral-900 border border-neutral-800 rounded-3xl p-8 flex flex-col justify-between transition-all duration-500 opacity-100 scale-100 z-10 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-20" alt="Landing Page">
+          <div class="flex justify-between items-center z-10">
+            <span class="text-xs font-extrabold uppercase tracking-wider bg-orange-500/20 text-orange-400 border border-orange-500/30 px-3 py-1 rounded-full">Xindus & BIVS</span>
+            <a href="https://bivs.com/" target="_blank" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-orange-500 transition">↗</a>
+          </div>
+          <div class="z-10 space-y-4">
+            <h2 class="text-3xl md:text-5xl font-bold leading-tight">Landing Page Layout & Live Copywriting</h2>
+            <p class="text-neutral-300 text-sm md:text-base max-w-lg leading-relaxed">
+              • End-to-end landing page layout design handed off directly to UI/UX engineering teams at Xindus.<br/>
+              • Authored commercial web copy for BIVS platform, establishing clear product value propositions.<br/>
+              • <strong>Impact:</strong> Refined user messaging flows that boosted overall conversion rates by 15%.
+            </p>
+            <div class="flex gap-4 pt-2">
+              <a href="https://www.xindus.net" target="_blank" class="px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg text-xs font-bold transition">xindus.net ↗</a>
+              <a href="https://bivs.com/" target="_blank" class="px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg text-xs font-bold transition">bivs.com ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Demos -->
+        <div class="tab-card absolute inset-0 bg-neutral-900 border border-neutral-800 rounded-3xl p-8 flex flex-col justify-between transition-all duration-500 opacity-0 scale-95 z-0 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-20" alt="Demos">
+          <div class="flex justify-between items-center z-10">
+            <span class="text-xs font-extrabold uppercase tracking-wider bg-orange-500/20 text-orange-400 border border-orange-500/30 px-3 py-1 rounded-full">Xindus Trade Networks</span>
+            <span class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">↗</span>
+          </div>
+          <div class="z-10 space-y-4">
+            <h2 class="text-3xl md:text-5xl font-bold leading-tight">Product Walkthroughs & Onboarding Demos</h2>
+            <p class="text-neutral-300 text-sm md:text-base max-w-lg leading-relaxed">
+              • Created visual onboarding tutorials and shipment creation explainer video walkthroughs using Canva.<br/>
+              • Translated complex operational workflows into clear visual storytelling narratives for Sales, Ops, and Tech.<br/>
+              • <strong>Impact:</strong> Standardized ERP/XOS communication systems and cut onboarding friction.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 3: Calculators -->
+        <div class="tab-card absolute inset-0 bg-neutral-900 border border-neutral-800 rounded-3xl p-8 flex flex-col justify-between transition-all duration-500 opacity-0 scale-95 z-0 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-20" alt="Calculators">
+          <div class="flex justify-between items-center z-10">
+            <span class="text-xs font-extrabold uppercase tracking-wider bg-orange-500/20 text-orange-400 border border-orange-500/30 px-3 py-1 rounded-full">Live Interactive Web Tools</span>
+            <a href="https://xindus-indiapost-rates.netlify.app/" target="_blank" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-orange-500 transition">↗</a>
+          </div>
+          <div class="z-10 space-y-4">
+            <h2 class="text-3xl md:text-5xl font-bold leading-tight">Interactive Shipment Rates Calculators</h2>
+            <p class="text-neutral-300 text-sm md:text-base max-w-lg leading-relaxed">
+              • Built interactive pricing and duty tools from scratch using Figma wireframes and self-hosted Web Apps.<br/>
+              • Solved user friction during cost estimation by turning complex multi-step rate matrices into instant self-serve tools.<br/>
+              • Demonstrates tech fluency, user-centric problem solving, and rapid web prototyping.
+            </p>
+            <div class="flex gap-2 flex-wrap pt-2">
+              <a href="https://xindus-indiapost-rates.netlify.app/" target="_blank" class="px-3 py-1.5 bg-white/10 hover:bg-white/20 rounded text-xs font-bold transition">IndiaPost Rates ↗</a>
+              <a href="https://xindus-lite-customers-rates.vercel.app/" target="_blank" class="px-3 py-1.5 bg-white/10 hover:bg-white/20 rounded text-xs font-bold transition">Lite Rates ↗</a>
+              <a href="https://export-duty-calculator-xindus.netlify.app/" target="_blank" class="px-3 py-1.5 bg-white/10 hover:bg-white/20 rounded text-xs font-bold transition">Export Duty Calculator ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: SEO Engine -->
+        <div class="tab-card absolute inset-0 bg-neutral-900 border border-neutral-800 rounded-3xl p-8 flex flex-col justify-between transition-all duration-500 opacity-0 scale-95 z-0 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=1200&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-20" alt="SEO">
+          <div class="flex justify-between items-center z-10">
+            <span class="text-xs font-extrabold uppercase tracking-wider bg-orange-500/20 text-orange-400 border border-orange-500/30 px-3 py-1 rounded-full">All India Institute of Occult Science</span>
+            <a href="https://blog.occultscience.in/unlocking-the-secrets-of-nakshatra-and-their-lords/" target="_blank" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-orange-500 transition">↗</a>
+          </div>
+          <div class="z-10 space-y-4">
+            <h2 class="text-3xl md:text-5xl font-bold leading-tight">225K+ Organic Impressions SEO Engine</h2>
+            <p class="text-neutral-300 text-sm md:text-base max-w-lg leading-relaxed">
+              • Executed a Wikipedia citation-gap SEO strategy to secure Page 1 Google rankings across competitive queries.<br/>
+              • Built and scaled a 100+ article content engine, generating over 225,260 organic impressions on top assets.<br/>
+              • Earned tier-1 media coverage across Times Now, ABP, and MSN.
+            </p>
+            <div class="flex gap-2 flex-wrap pt-2">
+              <a href="https://blog.occultscience.in/triangle-in-palmistry/" target="_blank" class="px-3 py-1.5 bg-white/10 hover:bg-white/20 rounded text-xs transition">Triangle Palmistry (49K Imp)</a>
+              <a href="https://blog.occultscience.in/unlocking-the-secrets-of-nakshatra-and-their-lords/" target="_blank" class="px-3 py-1.5 bg-white/10 hover:bg-white/20 rounded text-xs transition">Nakshatra Lords (225K Imp)</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. LIVE PROOFS & GSC METRICS GRID SECTION -->
+  <section class="py-24 px-6 md:px-16 max-w-7xl mx-auto border-t border-neutral-800">
+    <div class="mb-12">
+      <span class="text-xs font-bold uppercase tracking-widest text-orange-500">Search Console Proofs</span>
+      <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight mt-2">Verified Content Traffic & Rankings</h2>
+      <p class="text-neutral-400 mt-2">Direct search clicks and impression metrics recorded during campaign ownership.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      
+      <!-- Proof Item 1 -->
+      <a href="https://blog.occultscience.in/unlocking-the-secrets-of-nakshatra-and-their-lords/" target="_blank" class="bg-neutral-900 border border-neutral-800 p-6 rounded-2xl hover:border-orange-500 transition group">
+        <div class="flex justify-between items-start mb-4">
+          <span class="text-xs text-orange-500 font-mono">225,260 IMPRESSIONS</span>
+          <span class="text-xs text-neutral-400 font-mono">744 Clicks</span>
+        </div>
+        <h3 class="font-bold text-lg group-hover:text-orange-400 transition">Nakshatra & Their Lords</h3>
+        <p class="text-xs text-neutral-500 mt-2 truncate">blog.occultscience.in/unlocking-the-secrets...</p>
+      </a>
+
+      <!-- Proof Item 2 -->
+      <a href="https://blog.occultscience.in/knowing-about-mole-on-the-right-hand-palm-through-palmistry/" target="_blank" class="bg-neutral-900 border border-neutral-800 p-6 rounded-2xl hover:border-orange-500 transition group">
+        <div class="flex justify-between items-start mb-4">
+          <span class="text-xs text-orange-500 font-mono">75,295 IMPRESSIONS</span>
+          <span class="text-xs text-neutral-400 font-mono">461 Clicks</span>
+        </div>
+        <h3 class="font-bold text-lg group-hover:text-orange-400 transition">Right Hand Palm Moles</h3>
+        <p class="text-xs text-neutral-500 mt-2 truncate">blog.occultscience.in/knowing-about-mole...</p>
+      </a>
+
+      <!-- Proof Item 3 -->
+      <a href="https://blog.occultscience.in/palm-line-the-fate-line-and-the-sun-line/" target="_blank" class="bg-neutral-900 border border-neutral-800 p-6 rounded-2xl hover:border-orange-500 transition group">
+        <div class="flex justify-between items-start mb-4">
+          <span class="text-xs text-orange-500 font-mono">56,921 IMPRESSIONS</span>
+          <span class="text-xs text-neutral-400 font-mono">454 Clicks</span>
+        </div>
+        <h3 class="font-bold text-lg group-hover:text-orange-400 transition">Fate Line & Sun Line</h3>
+        <p class="text-xs text-neutral-500 mt-2 truncate">blog.occultscience.in/palm-line-the-fate-line...</p>
+      </a>
+
+      <!-- Proof Item 4 -->
+      <a href="https://blog.occultscience.in/divorce-line-in-female-hand-second-marriage-line-in-female-hand/" target="_blank" class="bg-neutral-900 border border-neutral-800 p-6 rounded-2xl hover:border-orange-500 transition group">
+        <div class="flex justify-between items-start mb-4">
+          <span class="text-xs text-orange-500 font-mono">55,298 IMPRESSIONS</span>
+          <span class="text-xs text-neutral-400 font-mono">1,162 Clicks</span>
+        </div>
+        <h3 class="font-bold text-lg group-hover:text-orange-400 transition">Female Marriage Line Analysis</h3>
+        <p class="text-xs text-neutral-500 mt-2 truncate">blog.occultscience.in/divorce-line-in-female...</p>
+      </a>
+
+      <!-- Proof Item 5 -->
+      <a href="https://blog.occultscience.in/triangle-in-palmistry/" target="_blank" class="bg-neutral-900 border border-neutral-800 p-6 rounded-2xl hover:border-orange-500 transition group">
+        <div class="flex justify-between items-start mb-4">
+          <span class="text-xs text-orange-500 font-mono">49,881 IMPRESSIONS</span>
+          <span class="text-xs text-neutral-400 font-mono">2,508 Clicks</span>
+        </div>
+        <h3 class="font-bold text-lg group-hover:text-orange-400 transition">Triangle in Palmistry Guide</h3>
+        <p class="text-xs text-neutral-500 mt-2 truncate">blog.occultscience.in/triangle-in-palmistry/</p>
+      </a>
+
+      <!-- Proof Item 6 -->
+      <a href="https://blog.occultscience.in/10th-house-lord-in-different-houses/" target="_blank" class="bg-neutral-900 border border-neutral-800 p-6 rounded-2xl hover:border-orange-500 transition group">
+        <div class="flex justify-between items-start mb-4">
+          <span class="text-xs text-orange-500 font-mono">34,615 IMPRESSIONS</span>
+          <span class="text-xs text-neutral-400 font-mono">350 Clicks</span>
+        </div>
+        <h3 class="font-bold text-lg group-hover:text-orange-400 transition">10th House Lord Breakdown</h3>
+        <p class="text-xs text-neutral-500 mt-2 truncate">blog.occultscience.in/10th-house-lord...</p>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- 4. KEY RESULTS & IMPACT NUMBERS -->
+  <section class="py-20 px-6 md:px-16 max-w-5xl mx-auto text-center">
+    <h2 class="text-3xl md:text-5xl font-extrabold mb-12">Measurable Impact Across Roles</h2>
+    
+    <div class="bg-neutral-900 border border-neutral-800 rounded-3xl p-10 md:p-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div>
+        <h3 class="text-5xl font-extrabold text-orange-500 mb-2">2x</h3>
+        <p class="text-sm text-neutral-400">Weekly Revenue Growth at Xindus (₹6L → ₹12L) via segment messaging</p>
+      </div>
+      <div>
+        <h3 class="text-5xl font-extrabold text-orange-500 mb-2">110</h3>
+        <p class="text-sm text-neutral-400">Enterprise Accounts Won Back via objection-analysis campaigns</p>
+      </div>
+      <div>
+        <h3 class="text-5xl font-extrabold text-orange-500 mb-2">225K+</h3>
+        <p class="text-sm text-neutral-400">Organic Impressions & Page 1 Google Rankings generated</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. FOOTER CTA -->
+  <footer id="contact" class="footer-gradient pt-24 pb-12 px-6 md:px-16 rounded-t-[3rem]">
+    <div class="max-w-6xl mx-auto flex flex-col justify-between min-h-[60vh]">
+      <div>
+        <span class="text-xs uppercase tracking-widest text-neutral-300">LET'S BUILD TOGETHER</span>
+        <h2 class="text-5xl md:text-8xl font-extrabold tracking-tight mt-4 mb-8">Ready to Turn Product Ideas <br/>Into Winning Stories?</h2>
+      </div>
+
+      <div class="flex flex-col md:flex-row justify-between items-end border-t border-white/20 pt-8 gap-6">
+        <div>
+          <p class="text-xl font-bold">+91 98184 82508</p>
+          <a href="mailto:ktanishqq17@gmail.com" class="text-neutral-300 hover:text-white transition">ktanishqq17@gmail.com</a>
+        </div>
+        <p class="text-sm text-neutral-400">© Tanishq Kumar. Product Marketing Specialist Portfolio.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- DEPENDENCIES & ANIMATIONS -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <script>
+    // 1. Lenis Smooth Scroll
+    const lenis = new Lenis({ duration: 1.2, smoothWheel: true });
+    function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+    requestAnimationFrame(raf);
+
+    // 2. Register GSAP Plugins
+    gsap.registerPlugin(ScrollTrigger);
+
+    // --- ANIMATION 1: Hero Shrink & Background Reveal ---
+    gsap.to('.hero-card', {
+      scale: 0.65,
+      borderRadius: '2.5rem',
+      scrollTrigger: {
+        trigger: '.hero-pin-wrapper',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: true
+      }
+    });
+
+    // --- ANIMATION 2: Pinned Tab-Based Showcase ---
+    const tabs = document.querySelectorAll('.tab-item');
+    const cards = document.querySelectorAll('.tab-card');
+
+    function setActiveTab(index) {
+      tabs.forEach((tab, i) => {
+        const dot = tab.querySelector('.tab-dot');
+        if (i === index) {
+          tab.classList.remove('text-neutral-500');
+          tab.classList.add('text-orange-500');
+          dot.classList.remove('bg-neutral-700', 'w-2', 'h-2');
+          dot.classList.add('bg-orange-500', 'w-3', 'h-3');
+        } else {
+          tab.classList.remove('text-orange-500');
+          tab.classList.add('text-neutral-500');
+          dot.classList.remove('bg-orange-500', 'w-3', 'h-3');
+          dot.classList.add('bg-neutral-700', 'w-2', 'h-2');
+        }
+      });
+
+      cards.forEach((card, i) => {
+        if (i === index) {
+          card.classList.remove('opacity-0', 'scale-95', 'z-0');
+          card.classList.add('opacity-100', 'scale-100', 'z-10');
+        } else {
+          card.classList.remove('opacity-100', 'scale-100', 'z-10');
+          card.classList.add('opacity-0', 'scale-95', 'z-0');
+        }
+      });
+    }
+
+    // ScrollTrigger to cycle tabs based on scroll progress through pinned wrapper
+    ScrollTrigger.create({
+      trigger: '.tabs-pin-wrapper',
+      start: 'top top',
+      end: 'bottom bottom',
+      onUpdate: (self) => {
+        const progress = self.progress;
+        if (progress < 0.25) setActiveTab(0);
+        else if (progress < 0.50) setActiveTab(1);
+        else if (progress < 0.75) setActiveTab(2);
+        else setActiveTab(3);
+      }
+    });
+
+    // Allow Manual Tab Clicks
+    tabs.forEach((tab, index) => {
+      tab.addEventListener('click', () => {
+        setActiveTab(index);
+      });
+    });
+  </script>
+</body>
+</html>
