@@ -46,9 +46,28 @@
       width: 200%;
       animation: marqueeTrack 25s linear infinite;
     }
+
+    /* Custom Mouse Cursor Tracer Glow */
+    .cursor-tracer {
+      position: fixed;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: rgba(255, 94, 0, 0.35);
+      border: 2px solid rgba(255, 255, 255, 0.6);
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+      mix-blend-difference;
+      transition: transform 0.1s ease-out, width 0.3s, height 0.3s;
+      box-shadow: 0 0 25px rgba(240, 62, 0, 0.8);
+    }
   </style>
 </head>
-<body class="bg-[#0d0d0d] text-white antialiased">
+<body class="bg-[#0d0d0d] text-white antialiased cursor-default">
+
+  <!-- CURSOR TRACER ELEMENT -->
+  <div class="cursor-tracer" id="tracer"></div>
 
   <!-- FLOATING STICKY HEADER BUTTON -->
   <div class="fixed top-6 right-6 z-50">
@@ -99,15 +118,16 @@
         </div>
       </div>
 
-      <!-- Hero Card with Embedded Portrait Image -->
-      <div class="hero-card hero-gradient w-full h-full p-8 md:p-16 flex flex-col justify-between z-10 origin-center transition-all relative overflow-hidden">
+      <!-- Hero Card with Embedded Interactive Portrait Image -->
+      <div id="heroCard" class="hero-card hero-gradient w-full h-full p-8 md:p-16 flex flex-col justify-between z-10 origin-center transition-all relative overflow-hidden">
         
-        <!-- Embedded Cutout Image Placement -->
+        <!-- Interactive Moving Cutout Image Placement -->
         <div class="absolute right-0 bottom-0 top-0 w-full md:w-1/2 h-full z-0 flex items-end justify-center md:justify-end pointer-events-none overflow-hidden">
           <img 
+            id="heroImage"
             src="tanishq-cutout.png" 
             alt="Tanishq Kumar" 
-            class="h-[85%] md:h-[95%] w-auto object-contain object-bottom drop-shadow-[0_20px_50px_rgba(0,0,0,0.6)]"
+            class="h-[85%] md:h-[95%] w-auto object-contain object-bottom drop-shadow-[0_20px_50px_rgba(0,0,0,0.6)] will-change-transform"
           >
         </div>
 
@@ -377,7 +397,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
   <script>
-    // 1. Lenis Smooth Scroll
+    // 1. Lenis Smooth Scroll Setup
     const lenis = new Lenis({ duration: 1.2, smoothWheel: true });
     function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
     requestAnimationFrame(raf);
@@ -385,8 +405,8 @@
     // 2. Register GSAP Plugins
     gsap.registerPlugin(ScrollTrigger);
 
-    // --- ANIMATION 1: Hero Shrink & Background Reveal ---
-    gsap.to('.hero-card', {
+    // --- ANIMATION 1: Hero Card Shrink & Scroll Parallax ---
+    gsap.to('#heroCard', {
       scale: 0.65,
       borderRadius: '2.5rem',
       scrollTrigger: {
@@ -397,7 +417,48 @@
       }
     });
 
-    // --- ANIMATION 2: Pinned Tab-Based Showcase ---
+    // Image Parallax scroll delay (makes image float/flow vertically on scroll)
+    gsap.to('#heroImage', {
+      y: -120,
+      scale: 1.08,
+      scrollTrigger: {
+        trigger: '.hero-pin-wrapper',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: 1.5
+      }
+    });
+
+    // --- ANIMATION 2: Interactive Mouse Movement Parallax & Cursor Tracer ---
+    const tracer = document.getElementById('tracer');
+    const heroImg = document.getElementById('heroImage');
+    const heroCard = document.getElementById('heroCard');
+
+    window.addEventListener('mousemove', (e) => {
+      // 1. Smooth Custom Cursor Tracer Follower
+      gsap.to(tracer, {
+        x: e.clientX,
+        y: e.clientY,
+        duration: 0.25,
+        ease: 'power2.out'
+      });
+
+      // 2. Interactive Image Movement on Mouse Hover
+      const { innerWidth, innerHeight } = window;
+      const xPercent = (e.clientX / innerWidth - 0.5) * 40; // Horizontal shift amount
+      const yPercent = (e.clientY / innerHeight - 0.5) * 30; // Vertical shift amount
+
+      gsap.to(heroImg, {
+        x: xPercent,
+        y: yPercent,
+        rotation: xPercent * 0.1,
+        duration: 0.8,
+        ease: 'power2.out',
+        overwrite: 'auto'
+      });
+    });
+
+    // --- ANIMATION 3: Pinned Tab-Based Showcase ---
     const tabs = document.querySelectorAll('.tab-item');
     const cards = document.querySelectorAll('.tab-card');
 
