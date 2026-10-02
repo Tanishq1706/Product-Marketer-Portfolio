@@ -3,12 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tanishq Kumar — Product Marketing Specialist & Growth Strategist</title>
+  <title>Tanishq Kumar — Product Marketing & Growth Strategist</title>
   
-  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- FontAwesome & Lenis Smooth Scroll -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.18/dist/lenis.css">
 
@@ -17,492 +14,349 @@
     
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: #080808;
+      background-color: #000000;
       color: #ffffff;
       overflow-x: hidden;
     }
 
-    /* Gradient Backgrounds */
-    .hero-bg {
-      background: radial-gradient(circle at 60% 40%, #e63900 0%, #a81c00 35%, #080808 80%);
+    .hero-gradient {
+      background: linear-gradient(135deg, #d93800 0%, #a81c00 50%, #730f00 100%);
     }
 
-    .footer-bg {
-      background: radial-gradient(circle at 50% 100%, #ff4500 0%, #b32d00 40%, #080808 85%);
+    .footer-gradient {
+      background: radial-gradient(circle at 50% 100%, #e63900 0%, #801400 50%, #080808 90%);
     }
 
-    /* Floating Animated Logos in Text Section */
-    .floating-logo {
+    /* Ambient Gemini-like Glow Effect */
+    .ambient-glow {
       position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      filter: blur(100px);
+      opacity: 0.65;
       pointer-events: none;
-      animation: floatMotion 6s ease-in-out infinite alternate;
-      filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));
+      animation: floatAura 10s ease-in-out infinite alternate;
     }
 
-    @keyframes floatMotion {
-      0% { transform: translateY(0px) rotate(0deg); }
-      100% { transform: translateY(-18px) rotate(4deg); }
+    .glow-1 {
+      background: radial-gradient(circle, rgba(234,88,12,0.8) 0%, rgba(194,65,12,0.4) 50%, transparent 70%);
+      top: 10%;
+      left: 15%;
     }
 
-    /* Horizontal Scrollbar Hide */
-    .no-scrollbar::-webkit-scrollbar { display: none; }
-    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    .glow-2 {
+      background: radial-gradient(circle, rgba(168,85,247,0.7) 0%, rgba(59,130,246,0.4) 50%, transparent 70%);
+      bottom: 10%;
+      right: 15%;
+      animation-delay: -5s;
+    }
 
-    /* Custom Mouse Cursor Tracer */
-    @media (pointer: fine) {
-      .cursor-tracer {
-        position: fixed;
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        background: rgba(255, 85, 0, 0.4);
-        border: 2px solid rgba(255, 255, 255, 0.8);
-        pointer-events: none;
-        transform: translate(-50%, -50%);
-        z-index: 9999;
-        mix-blend-mode: difference;
-        box-shadow: 0 0 20px rgba(255, 85, 0, 0.8);
+    @keyframes floatAura {
+      0% {
+        transform: translate(0, 0) scale(1) rotate(0deg);
+      }
+      50% {
+        transform: translate(60px, -40px) scale(1.2) rotate(180deg);
+      }
+      100% {
+        transform: translate(-40px, 50px) scale(0.9) rotate(360deg);
       }
     }
-    @media (pointer: coarse) { .cursor-tracer { display: none !important; } }
+
+    /* Card Dynamic Styles */
+    .service-card {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      background-color: #171717;
+      border: 1px solid #262626;
+    }
+
+    .service-card:hover, .service-card.active-card {
+      background: linear-gradient(135deg, #ea580c 0%, #c2410c 50%, #991b1b 100%);
+      border-color: #f97316;
+      transform: translateY(-4px);
+    }
+
+    .service-card .icon-badge {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+      transition: all 0.3s ease;
+    }
+
+    .service-card:hover .icon-badge, .service-card.active-card .icon-badge {
+      background-color: rgba(255, 255, 255, 0.25);
+    }
+
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
   </style>
 </head>
-<body class="bg-[#080808] text-white antialiased selection:bg-orange-600 selection:text-white">
-
-  <!-- CURSOR TRACER -->
-  <div class="cursor-tracer hidden md:block" id="tracer"></div>
+<body class="bg-black text-white antialiased selection:bg-orange-600 selection:text-white">
 
   <!-- NAVIGATION -->
   <nav class="fixed top-0 left-0 w-full z-50 px-6 py-6 flex justify-between items-center mix-blend-difference">
-    <a href="#" class="text-xl font-extrabold tracking-tighter uppercase text-white">TANISHQ KUMAR</a>
-    <a href="#contact" class="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-black font-bold text-xs sm:text-sm hover:scale-105 transition transform shadow-lg">
-      <span class="w-2 h-2 rounded-full bg-orange-600 animate-pulse"></span>
-      Get in Touch
+    <a href="#" class="text-xl font-black tracking-tighter uppercase text-white">TANISHQ KUMAR</a>
+    <a href="https://wa.me/919818492508?text=Hi%20Tanishq,%20I'd%20like%20to%20connect%20with%20you!" target="_blank" class="px-5 py-2.5 rounded-full bg-white text-black font-bold text-xs sm:text-sm hover:scale-105 transition transform shadow-xl">
+      • Get in Touch
     </a>
   </nav>
 
-  <!-- 1. HERO SECTION -->
-  <section class="relative min-h-screen hero-bg flex flex-col justify-between px-6 md:px-16 pt-32 pb-12 overflow-hidden">
-    <div class="max-w-5xl z-10 my-auto">
-      <h1 class="text-5xl sm:text-7xl lg:text-9xl font-extrabold tracking-tight leading-[0.95] text-white">
-        Translating <br/>
-        Data into Motion
-      </h1>
-    </div>
-
-    <!-- Side Floating Badges -->
-    <div class="absolute right-6 md:right-16 top-1/2 -translate-y-1/2 hidden md:flex flex-col gap-12 text-right z-10">
-      <div>
-        <p class="text-xs uppercase tracking-widest text-orange-200 font-semibold">GTM & Revenue</p>
-        <p class="text-lg font-bold text-white">100% Growth</p>
-      </div>
-      <div>
-        <p class="text-xs uppercase tracking-widest text-orange-200 font-semibold">Role & Discipline</p>
-        <p class="text-lg font-bold text-white">Product Marketing</p>
-      </div>
-    </div>
-
-    <!-- Hero Bottom Row Metrics -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 z-10 pt-10 border-t border-white/10">
-      <div>
-        <span class="text-2xl md:text-3xl font-extrabold text-orange-400">₹12L/wk</span>
-        <p class="text-xs text-neutral-300 font-medium mt-1">Xindus Weekly Revenue Doubled</p>
-      </div>
-      <div>
-        <span class="text-2xl md:text-3xl font-extrabold text-orange-400">20%</span>
-        <p class="text-xs text-neutral-300 font-medium mt-1">UNIVO Funnel Conversion Lift</p>
-      </div>
-      <div>
-        <span class="text-2xl md:text-3xl font-extrabold text-orange-400">225K+</span>
-        <p class="text-xs text-neutral-300 font-medium mt-1">Organic SEO Impressions</p>
-      </div>
-      <div>
-        <span class="text-2xl md:text-3xl font-extrabold text-orange-400">110 Clients</span>
-        <p class="text-xs text-neutral-300 font-medium mt-1">Dormant Accounts Won Back</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 2. STICKY SCROLL REVEAL SECTION (ACETERNITY UI PORT) -->
-  <section class="py-24 px-6 md:px-16 border-t border-neutral-900">
-    <div class="max-w-7xl mx-auto mb-12">
-      <h2 class="text-4xl md:text-6xl font-extrabold tracking-tight">Key Initiatives & Impact</h2>
-      <p class="text-neutral-400 text-sm mt-2">Scroll through to explore high-impact growth stories and deliverables.</p>
-    </div>
-
-    <div id="sticky-scroll-container" class="relative flex justify-between gap-10 max-w-7xl mx-auto h-[30rem] overflow-y-auto no-scrollbar rounded-3xl bg-neutral-950 p-6 md:p-10 border border-neutral-800">
+  <!-- HERO SECTION WITH AMBIENT GLOW -->
+  <div id="hero-wrapper" class="relative w-full h-[180vh]">
+    <div id="hero-sticky" class="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden p-0">
       
-      <!-- Left Scrolling Content Panel -->
-      <div class="w-full lg:w-1/2 space-y-28 my-10">
-        
-        <div class="sticky-step transition-opacity duration-300 opacity-100" data-index="0">
-          <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">Xindus Cross-Border GTM</h3>
-          <p class="text-neutral-400 text-base leading-relaxed">
-            Translated complex operational data into clear storytelling narratives for Sales, Ops, and Tech teams. Developed a segment-led messaging strategy for a low-adoption vertical that doubled weekly revenue from ₹6L to ₹12L and won back 110 dormant enterprise clients.
-          </p>
-        </div>
-
-        <div class="sticky-step transition-opacity duration-300 opacity-30" data-index="1">
-          <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">UNIVO Funnel Optimization</h3>
-          <p class="text-neutral-400 text-base leading-relaxed">
-            Audited sales funnels across 500+ counselors, reducing idle time to under 10%. Applied CRM fixes and real-time Power BI reporting to lift sales conversion rates directly from 12% to 20%.
-          </p>
-        </div>
-
-        <div class="sticky-step transition-opacity duration-300 opacity-30" data-index="2">
-          <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">Organic Growth & SEO Engine</h3>
-          <p class="text-neutral-400 text-base leading-relaxed">
-            Leveraged a Wikipedia citation-gap strategy to build a 100+ article content engine, securing Page 1 Google rankings, driving 225K+ organic impressions, and acquiring 2.5K+ clicks.
-          </p>
-        </div>
-
-        <div class="sticky-step transition-opacity duration-300 opacity-30" data-index="3">
-          <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">Interactive Tools & UX Mapping</h3>
-          <p class="text-neutral-400 text-base leading-relaxed">
-            Designed interactive rate calculators and conducted user journey mapping to refine onboarding flows, eliminating user drop-offs and raising overall digital engagement by 15%.
-          </p>
-        </div>
-
+      <!-- AMBIENT SMOKY GLOW LIGHTS (BEHIND CARD) -->
+      <div class="absolute inset-0 flex items-center justify-center overflow-hidden pointer-events-none">
+        <div class="ambient-glow glow-1"></div>
+        <div class="ambient-glow glow-2"></div>
       </div>
 
-      <!-- Right Sticky Preview Card -->
-      <div class="hidden lg:flex sticky top-0 h-80 w-1/2 rounded-2xl overflow-hidden items-center justify-center transition-all duration-700 border border-white/10 shadow-2xl my-auto" id="sticky-preview">
-        <div id="sticky-preview-content" class="text-center p-8 transition-opacity duration-300">
-          <i class="fa-solid fa-chart-line text-5xl mb-4 text-white"></i>
-          <h4 class="text-2xl font-bold text-white" id="sticky-card-title">₹12L Weekly Revenue</h4>
-          <p class="text-xs text-white/80 mt-2" id="sticky-card-desc">Xindus GTM Transformation</p>
+      <!-- BACKGROUND PROJECT GRID -->
+      <div id="hero-bg-grid" class="absolute inset-0 grid grid-cols-2 gap-4 p-4 opacity-0 pointer-events-none transition-opacity duration-300 z-0">
+        <div class="relative bg-neutral-900 rounded-3xl p-8 border border-neutral-800 flex flex-col justify-end overflow-hidden group">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:scale-105 transition duration-500" alt="Xindus GTM">
+          <div class="relative z-10">
+            <span class="text-xs text-orange-400 uppercase tracking-widest font-bold">Xindus GTM</span>
+            <h4 class="text-2xl font-bold mt-2">Cross-Border Revenue Engine</h4>
+          </div>
+        </div>
+        <div class="relative bg-neutral-900 rounded-3xl p-8 border border-neutral-800 flex flex-col justify-end overflow-hidden group">
+          <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80" class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:scale-105 transition duration-500" alt="UNIVO EdTech">
+          <div class="relative z-10">
+            <span class="text-xs text-orange-400 uppercase tracking-widest font-bold">UNIVO EdTech</span>
+            <h4 class="text-2xl font-bold mt-2">Funnel Optimization & Analytics</h4>
+          </div>
+        </div>
+        <div class="relative bg-neutral-900 rounded-3xl p-8 border border-neutral-800 flex flex-col justify-end overflow-hidden group">
+          <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=800&q=80" class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:scale-105 transition duration-500" alt="SEO Growth">
+          <div class="relative z-10">
+            <span class="text-xs text-orange-400 uppercase tracking-widest font-bold">SEO Growth</span>
+            <h4 class="text-2xl font-bold mt-2">225K+ Organic Impressions Engine</h4>
+          </div>
+        </div>
+        <div class="relative bg-neutral-900 rounded-3xl p-8 border border-neutral-800 flex flex-col justify-end overflow-hidden group">
+          <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80" class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:scale-105 transition duration-500" alt="Enterprise Retention">
+          <div class="relative z-10">
+            <span class="text-xs text-orange-400 uppercase tracking-widest font-bold">Enterprise Retention</span>
+            <h4 class="text-2xl font-bold mt-2">110 Accounts Reactivated</h4>
+          </div>
         </div>
       </div>
 
+      <!-- SHRINKING HERO CARD -->
+      <div id="hero-card" class="hero-gradient w-full h-full rounded-none p-8 md:p-16 flex flex-col justify-between shadow-2xl z-10 transition-all duration-100 relative">
+        <div class="max-w-4xl my-auto">
+          <h1 class="text-5xl sm:text-7xl lg:text-9xl font-extrabold tracking-tight leading-[0.92]">
+            Visualise <br/>
+            Your Mind <br/>
+            in Motion
+          </h1>
+        </div>
+
+        <div class="flex justify-between items-end">
+          <div>
+            <p class="text-xs uppercase tracking-widest opacity-80">Product Marketing & Strategy</p>
+            <p class="text-sm font-bold">Tanishq Kumar</p>
+          </div>
+          <div class="text-right">
+            <p class="text-xs uppercase tracking-widest opacity-80">Impact Driven</p>
+            <p class="text-sm font-bold">Growth & Revenue</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- WORK SHOWCASE -->
+  <section class="py-32 px-6 md:px-16 border-t border-neutral-900" id="work-section">
+    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12">
+      <div class="w-full lg:w-1/3">
+        <div class="sticky top-32 space-y-8">
+          <h2 class="text-3xl font-extrabold">Award Winning Work</h2>
+          <div class="space-y-4">
+            <div class="p-4 rounded-2xl bg-neutral-900/80 border border-neutral-700 cursor-pointer">
+              <p class="text-xs text-orange-500 font-bold uppercase tracking-wider">• Xindus GTM</p>
+              <p class="font-bold text-lg mt-1">Cross-Border Revenue Engine</p>
+            </div>
+            <div class="p-4 rounded-2xl bg-neutral-900/30 border border-neutral-800 cursor-pointer hover:bg-neutral-900/60 transition">
+              <p class="text-xs text-neutral-500 font-bold uppercase tracking-wider">• UNIVO EdTech</p>
+              <p class="font-bold text-lg mt-1">Sales Funnel Optimization</p>
+            </div>
+            <div class="p-4 rounded-2xl bg-neutral-900/30 border border-neutral-800 cursor-pointer hover:bg-neutral-900/60 transition">
+              <p class="text-xs text-neutral-500 font-bold uppercase tracking-wider">• Organic Engine</p>
+              <p class="font-bold text-lg mt-1">Wikipedia SEO & Strategy</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="w-full lg:w-2/3 space-y-12">
+        <div class="relative bg-neutral-900 rounded-3xl border border-neutral-800 overflow-hidden group min-h-[420px] flex flex-col justify-end p-8">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" class="absolute inset-0 w-full h-full object-cover opacity-25 group-hover:scale-105 transition duration-700" alt="Work 1">
+          <div class="relative z-10">
+            <span class="text-4xl font-extrabold text-orange-500">₹12L / wk</span>
+            <h3 class="text-2xl font-bold mt-2 mb-2">Doubled Weekly Revenue & Reactivated 110 Clients</h3>
+            <p class="text-sm text-neutral-300">Translated complex operational data into clear storytelling narratives for Sales, Ops, and Tech teams. Built a vertical strategy that scaled growth exponentially.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- 3. WHY WORK WITH ME? (3 FEATURE CARDS) -->
-  <section class="py-24 px-6 md:px-16 max-w-7xl mx-auto border-t border-neutral-900">
-    <div class="text-center max-w-2xl mx-auto mb-16">
-      <h2 class="text-4xl md:text-6xl font-extrabold tracking-tight">Why Work With Me?</h2>
-      <p class="text-orange-500 font-bold text-sm mt-3 uppercase tracking-wider">Fast-track your Product Growth & Funnel Performance</p>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div class="bg-neutral-900/60 border border-neutral-800 p-8 rounded-3xl hover:border-orange-500/50 transition">
-        <div class="w-12 h-12 rounded-2xl bg-orange-500/10 flex items-center justify-center text-orange-500 mb-6">
-          <i class="fa-solid fa-bolt text-xl"></i>
-        </div>
-        <h3 class="text-xl font-bold mb-3">Rapid GTM Delivery</h3>
-        <p class="text-sm text-neutral-400 leading-relaxed">
-          Launch segment-led messaging campaigns and win back enterprise clients in high-stakes quarterly cycles.
-        </p>
-      </div>
-
-      <div class="bg-neutral-900/60 border border-neutral-800 p-8 rounded-3xl hover:border-orange-500/50 transition">
-        <div class="w-12 h-12 rounded-2xl bg-orange-500/10 flex items-center justify-center text-orange-500 mb-6">
-          <i class="fa-solid fa-chart-pie text-xl"></i>
-        </div>
-        <h3 class="text-xl font-bold mb-3">Precision & Analytics</h3>
-        <p class="text-sm text-neutral-400 leading-relaxed">
-          Deep funnel analysis, CRM fixes, and real-time Power BI reporting to optimize acquisition and counselor efficiency.
-        </p>
-      </div>
-
-      <div class="bg-neutral-900/60 border border-neutral-800 p-8 rounded-3xl hover:border-orange-500/50 transition">
-        <div class="w-12 h-12 rounded-2xl bg-orange-500/10 flex items-center justify-center text-orange-500 mb-6">
-          <i class="fa-solid fa-fire text-xl"></i>
-        </div>
-        <h3 class="text-xl font-bold mb-3">Future-Proofed Organic Engine</h3>
-        <p class="text-sm text-neutral-400 leading-relaxed">
-          Build high-authority SEO assets and PR coverage driving consistent organic traffic and qualified leads.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 4. HORIZONTAL SERVICES CAROUSEL -->
-  <section class="py-24 px-6 md:px-16 border-t border-neutral-900 overflow-hidden">
+  <!-- SERVICES CAROUSEL (DYNAMIC HOVER FIXED) -->
+  <section id="services-trigger" class="py-24 px-6 md:px-16 border-t border-neutral-900 overflow-hidden">
     <div class="max-w-7xl mx-auto mb-12">
-      <h2 class="text-4xl md:text-6xl font-extrabold tracking-tight">Strategy & Competencies</h2>
-      <p class="text-neutral-400 text-sm mt-2">Core expertise across product marketing, analytics, and content engines.</p>
+      <h2 class="text-4xl md:text-6xl font-extrabold">Design That Speaks to Your Audience</h2>
+      <p class="text-neutral-400 text-sm mt-3 max-w-xl">My practice is focused on solving real-world digital challenges with thoughtful design thinking and growth strategy.</p>
     </div>
 
-    <div class="flex gap-6 overflow-x-auto no-scrollbar pb-8 pt-4 snap-x">
-      
-      <div class="w-80 md:w-96 flex-shrink-0 bg-gradient-to-b from-orange-600 to-red-700 p-8 rounded-3xl flex flex-col justify-between h-96 snap-start shadow-xl">
+    <div class="flex gap-6 overflow-x-auto no-scrollbar pb-8" id="services-carousel">
+      <div class="service-card active-card w-80 md:w-96 flex-shrink-0 p-8 rounded-3xl flex flex-col justify-between h-96 shadow-2xl cursor-pointer">
         <div class="flex justify-between items-start">
-          <span class="text-xs uppercase font-extrabold tracking-widest text-white/80">01</span>
-          <span class="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center text-white"><i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></span>
+          <span class="text-xs uppercase font-extrabold text-white/90">01</span>
+          <span class="icon-badge w-8 h-8 rounded-full flex items-center justify-center text-xs"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
         </div>
         <div>
           <h3 class="text-2xl font-bold mb-4 text-white">Product Messaging</h3>
           <ul class="text-xs text-white/90 space-y-2 font-medium">
             <li>• Value Proposition Design</li>
             <li>• Landing Page Layout & Copy</li>
-            <li>• User Journey Mapping</li>
-            <li>• Sales & Ops Enablement</li>
+            <li>• Sales & Ops Alignment</li>
           </ul>
         </div>
       </div>
 
-      <div class="w-80 md:w-96 flex-shrink-0 bg-neutral-900 border border-neutral-800 p-8 rounded-3xl flex flex-col justify-between h-96 snap-start hover:border-neutral-600 transition">
+      <div class="service-card w-80 md:w-96 flex-shrink-0 p-8 rounded-3xl flex flex-col justify-between h-96 shadow-2xl cursor-pointer">
         <div class="flex justify-between items-start">
-          <span class="text-xs uppercase font-extrabold tracking-widest text-neutral-500">02</span>
-          <span class="w-9 h-9 rounded-full bg-neutral-800 flex items-center justify-center text-xs"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+          <span class="text-xs uppercase font-extrabold text-neutral-400">02</span>
+          <span class="icon-badge w-8 h-8 rounded-full flex items-center justify-center text-xs"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
         </div>
         <div>
-          <h3 class="text-2xl font-bold mb-4 text-white">Funnel & Analytics</h3>
-          <ul class="text-xs text-neutral-400 space-y-2">
-            <li>• Funnel Bottleneck Audits</li>
-            <li>• Time & Motion Studies</li>
-            <li>• Real-Time Power BI Dashboards</li>
-            <li>• CRM Interventions & Fixes</li>
+          <h3 class="text-2xl font-bold mb-4 text-white">Funnel Analytics</h3>
+          <ul class="text-xs text-neutral-300 space-y-2">
+            <li>• Bottleneck Audits</li>
+            <li>• Power BI Reporting</li>
+            <li>• CRM Interventions</li>
           </ul>
         </div>
       </div>
 
-      <div class="w-80 md:w-96 flex-shrink-0 bg-neutral-900 border border-neutral-800 p-8 rounded-3xl flex flex-col justify-between h-96 snap-start hover:border-neutral-600 transition">
+      <div class="service-card w-80 md:w-96 flex-shrink-0 p-8 rounded-3xl flex flex-col justify-between h-96 shadow-2xl cursor-pointer">
         <div class="flex justify-between items-start">
-          <span class="text-xs uppercase font-extrabold tracking-widest text-neutral-500">03</span>
-          <span class="w-9 h-9 rounded-full bg-neutral-800 flex items-center justify-center text-xs"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+          <span class="text-xs uppercase font-extrabold text-neutral-400">03</span>
+          <span class="icon-badge w-8 h-8 rounded-full flex items-center justify-center text-xs"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
         </div>
         <div>
-          <h3 class="text-2xl font-bold mb-4 text-white">SEO & Content Strategy</h3>
-          <ul class="text-xs text-neutral-400 space-y-2">
-            <li>• Wikipedia Citation-Gap Method</li>
+          <h3 class="text-2xl font-bold mb-4 text-white">SEO & Content Engines</h3>
+          <ul class="text-xs text-neutral-300 space-y-2">
+            <li>• Wikipedia Citation Strategy</li>
             <li>• Page 1 Google Rankings</li>
-            <li>• 100+ High-Authority Articles</li>
-            <li>• Social Scripting & Insights</li>
+            <li>• High-Authority Articles</li>
           </ul>
         </div>
       </div>
-
-      <div class="w-80 md:w-96 flex-shrink-0 bg-neutral-900 border border-neutral-800 p-8 rounded-3xl flex flex-col justify-between h-96 snap-start hover:border-neutral-600 transition">
-        <div class="flex justify-between items-start">
-          <span class="text-xs uppercase font-extrabold tracking-widest text-neutral-500">04</span>
-          <span class="w-9 h-9 rounded-full bg-neutral-800 flex items-center justify-center text-xs"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
-        </div>
-        <div>
-          <h3 class="text-2xl font-bold mb-4 text-white">GTM & Retention</h3>
-          <ul class="text-xs text-neutral-400 space-y-2">
-            <li>• Dormant Account Win-Backs</li>
-            <li>• Whitespace Opportunity Planning</li>
-            <li>• Cross-Departmental SLAs</li>
-            <li>• PR Pitching & Brand Placement</li>
-          </ul>
-        </div>
-      </div>
-
     </div>
   </section>
 
-  <!-- 5. FLOATING BRAND LOGOS SECTION (FIXED SVG LOGOS) -->
-  <section class="py-32 px-6 relative border-t border-neutral-900 min-h-[60vh] flex items-center justify-center overflow-hidden">
-    
-    <!-- Floating SVGs -->
-    <div class="floating-logo top-12 left-[10%] opacity-80 bg-black/60 p-3 rounded-2xl border border-neutral-800">
-      <svg class="w-8 h-8 text-yellow-500" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg>
-    </div>
-    
-    <div class="floating-logo top-20 right-[12%] opacity-80 bg-black/60 p-3 rounded-2xl border border-neutral-800" style="animation-delay: -2s;">
-      <svg class="w-8 h-8 text-orange-500" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
-    </div>
-
-    <div class="floating-logo bottom-16 left-[15%] opacity-80 bg-black/60 p-3 rounded-2xl border border-neutral-800" style="animation-delay: -4s;">
-      <svg class="w-8 h-8 text-purple-400" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a5 5 0 0 0-5 5 5 5 0 0 0 5 5 5 5 0 0 0 5-5 5 5 0 0 0-5-5zm-5 10a5 5 0 0 0-5 5 5 5 0 0 0 5 5 5 5 0 0 0 5-5 5 5 0 0 0-5-5z"/></svg>
-    </div>
-
-    <div class="floating-logo bottom-20 right-[18%] opacity-80 bg-black/60 p-3 rounded-2xl border border-neutral-800" style="animation-delay: -1s;">
-      <svg class="w-8 h-8 text-orange-600" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-    </div>
-
-    <!-- Center Typography -->
-    <div class="max-w-4xl text-center z-10">
-      <h2 class="text-3xl sm:text-5xl md:text-7xl font-extrabold tracking-tight leading-tight text-white">
-        Trusted by Enterprise Teams & Built for Scalable Brands.
-      </h2>
-      <p class="text-neutral-400 text-sm md:text-base mt-6 max-w-xl mx-auto">
-        Powered by industry-standard analytics, design, and growth tools including Power BI, Google Analytics, Figma, SEMrush, HubSpot, and AI workflows.
-      </p>
-    </div>
-  </section>
-
-  <!-- 6. TAILORED FAQ ACCORDION SECTION -->
-  <section class="py-24 px-6 md:px-16 max-w-4xl mx-auto border-t border-neutral-900">
+  <!-- FAQS RESTORED -->
+  <section class="py-24 px-6 md:px-16 border-t border-neutral-900 max-w-4xl mx-auto">
     <h2 class="text-3xl md:text-5xl font-extrabold mb-12 text-center">Frequently Asked Questions</h2>
 
     <div class="space-y-4">
-      
-      <div class="faq-item border border-neutral-800 rounded-2xl bg-neutral-900/40 overflow-hidden">
-        <button class="faq-btn w-full p-6 text-left flex justify-between items-center font-bold text-lg hover:text-orange-400 transition">
-          <span>1. How do you translate complex product features or technical data into simple, customer-focused messaging?</span>
-          <i class="fa-solid fa-plus text-sm transition-transform duration-300"></i>
+      <div class="faq-item border border-neutral-800 rounded-2xl bg-neutral-950 overflow-hidden">
+        <button class="faq-btn w-full p-6 text-left font-bold flex justify-between items-center hover:text-orange-500 transition">
+          <span>What is your approach to Product Marketing & Growth?</span>
+          <i class="fa-solid fa-plus text-xs faq-icon transition transform"></i>
         </button>
-        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 px-6 text-sm text-neutral-400 leading-relaxed">
-          <p class="pb-6">At Xindus, I specialized in converting complex operational data into clear storytelling narratives for Sales, Ops, and Tech, which helped build trust and resolve recurring service friction. Additionally, I developed a segment-led messaging strategy for a low-adoption vertical that doubled weekly revenue from ₹6L to ₹12L.</p>
+        <div class="faq-answer hidden px-6 pb-6 text-sm text-neutral-400 leading-relaxed border-t border-neutral-900 pt-4">
+          I align positioning, sales Enablement, and analytics. From auditing conversion funnels to deploying organic SEO architectures, I ensure products acquire, activate, and retain users predictably.
         </div>
       </div>
 
-      <div class="faq-item border border-neutral-800 rounded-2xl bg-neutral-900/40 overflow-hidden">
-        <button class="faq-btn w-full p-6 text-left flex justify-between items-center font-bold text-lg hover:text-orange-400 transition">
-          <span>2. What is your experience with SEO, copywriting, and driving organic growth?</span>
-          <i class="fa-solid fa-plus text-sm transition-transform duration-300"></i>
+      <div class="faq-item border border-neutral-800 rounded-2xl bg-neutral-950 overflow-hidden">
+        <button class="faq-btn w-full p-6 text-left font-bold flex justify-between items-center hover:text-orange-500 transition">
+          <span>How quickly can custom projects or funnel audits be turned around?</span>
+          <i class="fa-solid fa-plus text-xs faq-icon transition transform"></i>
         </button>
-        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 px-6 text-sm text-neutral-400 leading-relaxed">
-          <p class="pb-6">As a Content Marketer at the All India Institute of Occult Science, I conducted keyword and audience-gap research (using a Wikipedia citation-gap strategy) that secured Page 1 Google rankings. I built a 100+ article content engine generating 225K+ impressions and 2.5K+ organic clicks, backed by hands-on expertise in SEO/SEM, copywriting, and landing page content.</p>
+        <div class="faq-answer hidden px-6 pb-6 text-sm text-neutral-400 leading-relaxed border-t border-neutral-900 pt-4">
+          Standard funnel audits and GTM messaging frameworks are typically delivered in 48 to 72 hours with actionable roadmaps and data dashboards.
         </div>
       </div>
-
-      <div class="faq-item border border-neutral-800 rounded-2xl bg-neutral-900/40 overflow-hidden">
-        <button class="faq-btn w-full p-6 text-left flex justify-between items-center font-bold text-lg hover:text-orange-400 transition">
-          <span>3. How do you approach GTM messaging, collateral creation, and cross-functional alignment?</span>
-          <i class="fa-solid fa-plus text-sm transition-transform duration-300"></i>
-        </button>
-        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 px-6 text-sm text-neutral-400 leading-relaxed">
-          <p class="pb-6">I have end-to-end experience aligning messaging across functions. At Xindus, I aligned strategic insights across six core departments to maintain brand consistency from acquisition to retention. I also conducted UX research and journey mapping to refine messaging flows, which improved conversion rates by 15%.</p>
-        </div>
-      </div>
-
-      <div class="faq-item border border-neutral-800 rounded-2xl bg-neutral-900/40 overflow-hidden">
-        <button class="faq-btn w-full p-6 text-left flex justify-between items-center font-bold text-lg hover:text-orange-400 transition">
-          <span>4. Are you comfortable using AI workflows and design tools like Figma?</span>
-          <i class="fa-solid fa-plus text-sm transition-transform duration-300"></i>
-        </button>
-        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 px-6 text-sm text-neutral-400 leading-relaxed">
-          <p class="pb-6">Yes. My growth and strategy toolkit includes Figma, Canva, PowerPoint, HubSpot CRM, SEMrush, and Ahrefs. I leverage Claude and ChatGPT for research, ideation, and content workflows, and previously proposed AI-driven onboarding solutions during my data analytics role at UNIVO Ed Tech.</p>
-        </div>
-      </div>
-
-      <div class="faq-item border border-neutral-800 rounded-2xl bg-neutral-900/40 overflow-hidden">
-        <button class="faq-btn w-full p-6 text-left flex justify-between items-center font-bold text-lg hover:text-orange-400 transition">
-          <span>5. How do you use data and campaign analytics to optimize customer acquisition and retention?</span>
-          <i class="fa-solid fa-plus text-sm transition-transform duration-300"></i>
-        </button>
-        <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 px-6 text-sm text-neutral-400 leading-relaxed">
-          <p class="pb-6">At UNIVO Ed Tech, I audited the sales funnel for 500+ counsellors and applied CRM fixes that increased conversion rates from 12% to 20%. At Xindus, I led an objection-analysis outreach campaign targeting dormant enterprise accounts, winning back 110 clients in Q1.</p>
-        </div>
-      </div>
-
     </div>
   </section>
 
-  <!-- 7. FOOTER -->
-  <footer id="contact" class="footer-bg pt-24 pb-12 px-6 md:px-16 rounded-t-[3rem] border-t border-white/10">
-    <div class="max-w-6xl mx-auto flex flex-col justify-between min-h-[60vh]">
+  <!-- FOOTER -->
+  <footer id="contact" class="footer-gradient pt-24 pb-12 px-6 md:px-16 rounded-t-[3rem] border-t border-white/10 mt-20">
+    <div class="max-w-6xl mx-auto flex flex-col justify-between min-h-[40vh]">
       <div>
         <span class="text-xs uppercase tracking-widest text-neutral-300 font-bold">REACH OUT</span>
         <h2 class="text-4xl md:text-7xl font-extrabold tracking-tight mt-4 mb-8 text-white leading-tight">
           Ready to Bring Your <br/>Vision to Life?
         </h2>
-        <a href="mailto:ktanishqq17@gmail.com" class="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white text-black font-bold text-sm hover:scale-105 transition">
-          <span class="w-2 h-2 rounded-full bg-orange-600 animate-pulse"></span>
-          Get in Touch
+        <a href="https://wa.me/919818492508" target="_blank" class="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white text-black font-bold text-sm hover:scale-105 transition">
+          • Get in Touch
         </a>
-      </div>
-
-      <div class="flex flex-col md:flex-row justify-between items-start md:items-end border-t border-white/20 pt-8 gap-6 mt-16">
-        <div>
-          <p class="text-xl font-bold">+91 98184 82508</p>
-          <a href="mailto:ktanishqq17@gmail.com" class="text-neutral-300 hover:text-white transition text-sm">ktanishqq17@gmail.com</a>
-        </div>
-        <div class="flex gap-4">
-          <a href="https://linkedin.com" target="_blank" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-black transition text-sm font-bold"><i class="fa-brands fa-linkedin-in"></i></a>
-          <a href="mailto:ktanishqq17@gmail.com" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-black transition text-sm font-bold"><i class="fa-regular fa-envelope"></i></a>
-        </div>
-        <p class="text-xs text-neutral-400">Copyright © Tanishq Kumar Design 2026</p>
       </div>
     </div>
   </footer>
 
-  <!-- DEPENDENCIES & SCRIPTS -->
   <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
   <script>
-    // 1. Lenis Smooth Scroll
+    gsap.registerPlugin(ScrollTrigger);
+
     const lenis = new Lenis({ duration: 1.2, smoothWheel: true });
-    function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
-    requestAnimationFrame(raf);
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add((time) => { lenis.raf(time * 1000); });
+    gsap.ticker.lagSmoothing(0, 0);
 
-    // 2. Cursor Tracer
-    const tracer = document.getElementById('tracer');
-    if (window.matchMedia('(pointer: fine)').matches && tracer) {
-      window.addEventListener('mousemove', (e) => {
-        gsap.to(tracer, { x: e.clientX, y: e.clientY, duration: 0.2, ease: 'power2.out' });
-      });
-    }
-
-    // 3. Aceternity UI Sticky Scroll Replica Logic
-    const stickyContainer = document.getElementById('sticky-scroll-container');
-    const stickySteps = document.querySelectorAll('.sticky-step');
-    const stickyPreview = document.getElementById('sticky-preview');
-    const stickyCardTitle = document.getElementById('sticky-card-title');
-    const stickyCardDesc = document.getElementById('sticky-card-desc');
-
-    const cardData = [
-      {
-        bg: "linear-gradient(to bottom right, #ea580c, #dc2626)",
-        title: "₹12L Weekly Revenue",
-        desc: "Xindus GTM Transformation"
-      },
-      {
-        bg: "linear-gradient(to bottom right, #0284c7, #0d9488)",
-        title: "12% → 20% Conversion",
-        desc: "UNIVO Funnel Optimization"
-      },
-      {
-        bg: "linear-gradient(to bottom right, #7c3aed, #db2777)",
-        title: "225K+ Impressions",
-        desc: "Organic SEO Engine"
-      },
-      {
-        bg: "linear-gradient(to bottom right, #059669, #16a34a)",
-        title: "+15% Conversion Rate",
-        desc: "Interactive Calculators & UX"
+    // Hero Shrink Effect
+    gsap.to("#hero-card", {
+      scale: 0.45,
+      borderRadius: "2.5rem",
+      ease: "power1.inOut",
+      scrollTrigger: {
+        trigger: "#hero-wrapper",
+        start: "top top",
+        end: "bottom bottom",
+        scrub: true
       }
-    ];
-
-    stickyPreview.style.background = cardData[0].bg;
-
-    stickyContainer.addEventListener('scroll', () => {
-      let activeIndex = 0;
-      const containerTop = stickyContainer.scrollTop;
-      const containerHeight = stickyContainer.clientHeight;
-
-      stickySteps.forEach((step, index) => {
-        const stepTop = step.offsetTop - stickyContainer.offsetTop;
-        if (containerTop >= stepTop - containerHeight / 3) {
-          activeIndex = index;
-        }
-      });
-
-      stickySteps.forEach((step, index) => {
-        if (index === activeIndex) {
-          step.classList.remove('opacity-30');
-          step.classList.add('opacity-100');
-        } else {
-          step.classList.remove('opacity-100');
-          step.classList.add('opacity-30');
-        }
-      });
-
-      stickyPreview.style.background = cardData[activeIndex].bg;
-      stickyCardTitle.innerText = cardData[activeIndex].title;
-      stickyCardDesc.innerText = cardData[activeIndex].desc;
     });
 
-    // 4. FAQ Accordion Logic
-    const faqBtns = document.querySelectorAll('.faq-btn');
-    faqBtns.forEach(btn => {
+    gsap.to("#hero-bg-grid", {
+      opacity: 1,
+      scrollTrigger: {
+        trigger: "#hero-wrapper",
+        start: "center top",
+        end: "bottom bottom",
+        scrub: true
+      }
+    });
+
+    // Hover Highlight Logic
+    const serviceCards = document.querySelectorAll('.service-card');
+    serviceCards.forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        serviceCards.forEach(c => c.classList.remove('active-card'));
+        card.classList.add('active-card');
+      });
+    });
+
+    // FAQ Toggle
+    document.querySelectorAll('.faq-btn').forEach(btn => {
       btn.addEventListener('click', () => {
-        const answer = btn.nextElementSibling;
-        const icon = btn.querySelector('i');
+        const item = btn.parentElement;
+        const answer = item.querySelector('.faq-answer');
+        const icon = btn.querySelector('.faq-icon');
+        const isHidden = answer.classList.contains('hidden');
         
-        if (answer.style.maxHeight) {
-          answer.style.maxHeight = null;
-          icon.classList.remove('rotate-45');
-        } else {
-          document.querySelectorAll('.faq-answer').forEach(a => a.style.maxHeight = null);
-          document.querySelectorAll('.faq-btn i').forEach(i => i.classList.remove('rotate-45'));
-          answer.style.maxHeight = answer.scrollHeight + "px";
-          icon.classList.add('rotate-45');
+        document.querySelectorAll('.faq-answer').forEach(a => a.classList.add('hidden'));
+        if (isHidden) {
+          answer.classList.remove('hidden');
+          icon.classList.add('rotate-180', 'text-orange-500');
         }
       });
     });
