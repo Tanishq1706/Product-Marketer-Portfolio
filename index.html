@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tanishq Kumar — Product Marketing Portfolio</title>
+  <title>Tanishq Kumar — Product Marketing Specialist</title>
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -30,12 +30,12 @@
     }
 
     .glass-pill {
-      background: rgba(0, 0, 0, 0.3);
+      background: rgba(0, 0, 0, 0.35);
       backdrop-filter: blur(12px);
       border: 1px solid rgba(255, 255, 255, 0.2);
     }
 
-    /* Infinite Marquee Animation for Hero Background */
+    /* Infinite Marquee Animation for Background */
     @keyframes marqueeTrack {
       0% { transform: translateX(0); }
       100% { transform: translateX(-50%); }
@@ -47,112 +47,105 @@
       animation: marqueeTrack 25s linear infinite;
     }
 
-    /* Custom Mouse Cursor Tracer Glow */
-    .cursor-tracer {
-      position: fixed;
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      background: rgba(255, 94, 0, 0.35);
-      border: 2px solid rgba(255, 255, 255, 0.6);
-      pointer-events: none;
-      transform: translate(-50%, -50%);
-      z-index: 9999;
-      mix-blend-difference;
-      transition: transform 0.1s ease-out, width 0.3s, height 0.3s;
-      box-shadow: 0 0 25px rgba(240, 62, 0, 0.8);
+    /* Custom Mouse Cursor Tracer Glow (Hidden on Touch Devices) */
+    @media (pointer: fine) {
+      .cursor-tracer {
+        position: fixed;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: rgba(255, 94, 0, 0.35);
+        border: 2px solid rgba(255, 255, 255, 0.6);
+        pointer-events: none;
+        transform: translate(-50%, -50%);
+        z-index: 9999;
+        mix-blend-mode: difference;
+        box-shadow: 0 0 25px rgba(240, 62, 0, 0.8);
+      }
+    }
+
+    @media (pointer: coarse) {
+      .cursor-tracer {
+        display: none !important;
+      }
     }
   </style>
 </head>
 <body class="bg-[#0d0d0d] text-white antialiased cursor-default">
 
   <!-- CURSOR TRACER ELEMENT -->
-  <div class="cursor-tracer" id="tracer"></div>
+  <div class="cursor-tracer hidden md:block" id="tracer"></div>
 
   <!-- FLOATING STICKY HEADER BUTTON -->
-  <div class="fixed top-6 right-6 z-50">
-    <a href="#contact" class="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-black font-semibold text-sm shadow-xl hover:scale-105 transition transform">
+  <div class="fixed top-4 right-4 md:top-6 md:right-6 z-50">
+    <a href="#contact" class="flex items-center gap-2 px-4 py-2 md:px-5 md:py-2.5 rounded-full bg-white text-black font-semibold text-xs md:text-sm shadow-xl hover:scale-105 transition transform">
       <span class="w-2 h-2 rounded-full bg-orange-600 animate-pulse"></span>
       Get in Touch
     </a>
   </div>
 
   <!-- MAIN NAVIGATION -->
-  <nav class="fixed top-6 left-6 z-50 mix-blend-difference">
-    <a href="#" class="text-xl font-extrabold tracking-tighter uppercase">TANISHQ KUMAR</a>
+  <nav class="fixed top-5 left-4 md:top-6 md:left-6 z-50 mix-blend-difference">
+    <a href="#" class="text-lg md:text-xl font-extrabold tracking-tighter uppercase">TANISHQ KUMAR</a>
   </nav>
 
-  <!-- 1. HERO SHRINK & BACKGROUND REVEAL SECTION -->
-  <section class="hero-pin-wrapper relative h-[200vh] bg-[#0d0d0d]">
-    <div class="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center">
+  <!-- 1. HERO SECTION -->
+  <section class="hero-pin-wrapper relative h-[180vh] md:h-[200vh] bg-[#0d0d0d]">
+    <div class="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center p-3 sm:p-6 md:p-12">
       
-      <!-- Scrolling Carousel Background (Revealed as Hero Shrinks) -->
-      <div class="hero-bg-carousel absolute inset-0 opacity-40 pointer-events-none flex flex-col justify-center gap-6 scale-110">
-        <!-- Row 1 -->
-        <div class="animate-marquee gap-6">
-          <div class="w-80 h-48 bg-neutral-800 rounded-2xl flex-shrink-0 p-4 border border-neutral-700 flex flex-col justify-end">
-            <span class="text-xs text-orange-400 font-bold">XINDUS GLOBAL</span>
-            <span class="font-bold text-lg">Cross-Border Logistics GTM</span>
+      <!-- Carousel Background -->
+      <div class="hero-bg-carousel absolute inset-0 opacity-30 md:opacity-40 pointer-events-none flex flex-col justify-center gap-4 md:gap-6 scale-110">
+        <div class="animate-marquee gap-4 md:gap-6">
+          <div class="w-64 h-36 md:w-80 md:h-48 bg-neutral-800 rounded-2xl flex-shrink-0 p-4 border border-neutral-700 flex flex-col justify-end">
+            <span class="text-[10px] md:text-xs text-orange-400 font-bold">XINDUS GLOBAL</span>
+            <span class="font-bold text-sm md:text-lg">Cross-Border Logistics GTM</span>
           </div>
-          <div class="w-80 h-48 bg-neutral-800 rounded-2xl flex-shrink-0 p-4 border border-neutral-700 flex flex-col justify-end">
-            <span class="text-xs text-orange-400 font-bold">BIVS PLATFORM</span>
-            <span class="font-bold text-lg">Landing Page Copywriting</span>
+          <div class="w-64 h-36 md:w-80 md:h-48 bg-neutral-800 rounded-2xl flex-shrink-0 p-4 border border-neutral-700 flex flex-col justify-end">
+            <span class="text-[10px] md:text-xs text-orange-400 font-bold">BIVS PLATFORM</span>
+            <span class="font-bold text-sm md:text-lg">Landing Page Copywriting</span>
           </div>
-          <div class="w-80 h-48 bg-neutral-800 rounded-2xl flex-shrink-0 p-4 border border-neutral-700 flex flex-col justify-end">
-            <span class="text-xs text-orange-400 font-bold">INDIA POST TOOL</span>
-            <span class="font-bold text-lg">Interactive Rates Engine</span>
+          <div class="w-64 h-36 md:w-80 md:h-48 bg-neutral-800 rounded-2xl flex-shrink-0 p-4 border border-neutral-700 flex flex-col justify-end">
+            <span class="text-[10px] md:text-xs text-orange-400 font-bold">INDIA POST TOOL</span>
+            <span class="font-bold text-sm md:text-lg">Interactive Rates Engine</span>
           </div>
-          <div class="w-80 h-48 bg-neutral-800 rounded-2xl flex-shrink-0 p-4 border border-neutral-700 flex flex-col justify-end">
-            <span class="text-xs text-orange-400 font-bold">OCCULT SCIENCE</span>
-            <span class="font-bold text-lg">225K+ Organic Impressions</span>
+          <div class="w-64 h-36 md:w-80 md:h-48 bg-neutral-800 rounded-2xl flex-shrink-0 p-4 border border-neutral-700 flex flex-col justify-end">
+            <span class="text-[10px] md:text-xs text-orange-400 font-bold">OCCULT SCIENCE</span>
+            <span class="font-bold text-sm md:text-lg">225K+ Organic Impressions</span>
           </div>
-          <!-- Loop Duplicates -->
-          <div class="w-80 h-48 bg-neutral-800 rounded-2xl flex-shrink-0 p-4 border border-neutral-700 flex flex-col justify-end">
-            <span class="text-xs text-orange-400 font-bold">XINDUS GLOBAL</span>
-            <span class="font-bold text-lg">Cross-Border Logistics GTM</span>
-          </div>
-          <div class="w-80 h-48 bg-neutral-800 rounded-2xl flex-shrink-0 p-4 border border-neutral-700 flex flex-col justify-end">
-            <span class="text-xs text-orange-400 font-bold">BIVS PLATFORM</span>
-            <span class="font-bold text-lg">Landing Page Copywriting</span>
+          <div class="w-64 h-36 md:w-80 md:h-48 bg-neutral-800 rounded-2xl flex-shrink-0 p-4 border border-neutral-700 flex flex-col justify-end">
+            <span class="text-[10px] md:text-xs text-orange-400 font-bold">XINDUS GLOBAL</span>
+            <span class="font-bold text-sm md:text-lg">Cross-Border Logistics GTM</span>
           </div>
         </div>
       </div>
 
-      <!-- Hero Card with Embedded Interactive Portrait Image -->
-      <div id="heroCard" class="hero-card hero-gradient w-full h-full p-8 md:p-16 flex flex-col justify-between z-10 origin-center transition-all relative overflow-hidden">
+      <!-- Hero Card Container -->
+      <div id="heroCard" class="hero-card hero-gradient w-full h-full max-w-7xl rounded-3xl p-6 sm:p-10 md:p-16 flex flex-col justify-between z-10 origin-center transition-all relative overflow-hidden shadow-2xl border border-white/10">
         
-        <!-- Interactive Moving Cutout Image Placement -->
-        <div class="absolute right-0 bottom-0 top-0 w-full md:w-1/2 h-full z-0 flex items-end justify-center md:justify-end pointer-events-none overflow-hidden">
-          <img 
-            id="heroImage"
-            src="tanishq-cutout.png" 
-            alt="Tanishq Kumar" 
-            class="h-[85%] md:h-[95%] w-auto object-contain object-bottom drop-shadow-[0_20px_50px_rgba(0,0,0,0.6)] will-change-transform"
-          >
-        </div>
-
-        <!-- Top Header Tags -->
-        <div class="flex justify-between items-start w-full z-10">
-          <span class="glass-pill text-xs uppercase tracking-widest px-4 py-2 rounded-full">
+        <!-- Top Header Badge -->
+        <div class="flex justify-between items-start w-full z-10 pt-10 md:pt-0">
+          <span class="glass-pill text-[10px] sm:text-xs uppercase tracking-widest px-3 py-1.5 md:px-4 md:py-2 rounded-full font-bold">
             Product Marketing Specialist
           </span>
         </div>
 
-        <!-- Hero Heading and Subtext -->
-        <div class="max-w-3xl z-10 my-auto">
-          <h1 class="text-4xl md:text-7xl font-extrabold tracking-tight leading-[0.95] mb-6 drop-shadow-lg">
+        <!-- Main Hero Heading and Subtext -->
+        <div class="max-w-4xl z-10 my-auto">
+          <h1 class="text-3xl sm:text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.05] sm:leading-[0.98] mb-4 sm:mb-6 text-white">
             Translating Complex Products into High-Converting Stories
           </h1>
-          <p class="text-base md:text-xl text-neutral-100 max-w-xl font-normal leading-relaxed drop-shadow-md">
+          <p class="text-sm sm:text-lg md:text-xl text-neutral-200 max-w-2xl font-normal leading-relaxed">
             I bridge product features and user adoption through high-converting landing page copy, interactive tools, Canva onboarding walkthroughs, and Figma wireframes.
           </p>
         </div>
 
-        <!-- Bottom Stat Badge -->
-        <div class="z-10 flex gap-6 items-center">
-          <div class="glass-pill px-4 py-2 rounded-2xl flex items-center gap-3">
-            <span class="text-2xl font-extrabold text-orange-300">225K+</span>
-            <span class="text-xs uppercase tracking-wider text-neutral-200">Organic Traffic <br/>Generated</span>
+        <!-- Bottom Metric Pill -->
+        <div class="z-10 flex gap-4 items-center">
+          <div class="glass-pill px-4 py-2.5 sm:px-5 sm:py-3 rounded-2xl flex items-center gap-3">
+            <span class="text-xl sm:text-3xl font-extrabold text-orange-400">225K+</span>
+            <span class="text-[10px] sm:text-xs uppercase tracking-wider text-neutral-200 font-medium leading-tight">
+              Organic Traffic <br/>Generated
+            </span>
           </div>
         </div>
 
@@ -161,71 +154,69 @@
     </div>
   </section>
 
-  <!-- 2. PINNED TAB-BASED WORK SHOWCASE SECTION -->
-  <section class="tabs-pin-wrapper relative h-[400vh] bg-[#0d0d0d] border-t border-neutral-800">
-    <div class="sticky top-0 h-screen w-full flex flex-col md:flex-row items-center px-6 md:px-16 gap-8 md:gap-16">
+  <!-- 2. PINNED TAB-BASED SHOWCASE SECTION -->
+  <section class="tabs-pin-wrapper relative h-[350vh] md:h-[400vh] bg-[#0d0d0d] border-t border-neutral-800">
+    <div class="sticky top-0 h-screen w-full flex flex-col lg:flex-row items-center justify-center px-4 sm:px-8 lg:px-16 gap-6 lg:gap-12 py-12">
       
-      <!-- Left Column: Interactive Timeline Navigation Tabs -->
-      <div class="w-full md:w-1/3 flex-shrink-0">
-        <p class="text-xs font-bold uppercase tracking-widest text-neutral-500 mb-6">Featured Work & Live Proofs</p>
+      <!-- Left Column: Navigation Tabs -->
+      <div class="w-full lg:w-1/3 flex-shrink-0">
+        <p class="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-neutral-500 mb-3 sm:mb-6">Featured Work & Live Proofs</p>
         
-        <div class="space-y-6">
-          <div class="tab-item cursor-pointer flex items-center gap-4 text-orange-500 font-bold transition-all" data-tab="0">
-            <span class="tab-dot w-3 h-3 rounded-full bg-orange-500 transition-all"></span>
-            <span class="text-lg md:text-2xl">01. Live Landing Pages & Copy</span>
+        <div class="grid grid-cols-2 lg:grid-cols-1 gap-2 sm:gap-4">
+          <div class="tab-item cursor-pointer flex items-center gap-2 sm:gap-4 text-orange-500 font-bold transition-all p-2 rounded-lg bg-neutral-900/50 lg:bg-transparent" data-tab="0">
+            <span class="tab-dot w-2.5 h-2.5 rounded-full bg-orange-500 transition-all flex-shrink-0"></span>
+            <span class="text-xs sm:text-base lg:text-xl truncate">01. Live Landing Pages</span>
           </div>
 
-          <div class="tab-item cursor-pointer flex items-center gap-4 text-neutral-500 hover:text-white transition-all" data-tab="1">
-            <span class="tab-dot w-2 h-2 rounded-full bg-neutral-700 transition-all"></span>
-            <span class="text-lg md:text-2xl">02. Product Demos & Onboarding</span>
+          <div class="tab-item cursor-pointer flex items-center gap-2 sm:gap-4 text-neutral-500 hover:text-white transition-all p-2 rounded-lg bg-neutral-900/50 lg:bg-transparent" data-tab="1">
+            <span class="tab-dot w-2 h-2 rounded-full bg-neutral-700 transition-all flex-shrink-0"></span>
+            <span class="text-xs sm:text-base lg:text-xl truncate">02. Onboarding Demos</span>
           </div>
 
-          <div class="tab-item cursor-pointer flex items-center gap-4 text-neutral-500 hover:text-white transition-all" data-tab="2">
-            <span class="tab-dot w-2 h-2 rounded-full bg-neutral-700 transition-all"></span>
-            <span class="text-lg md:text-2xl">03. Interactive Calculators & Tools</span>
+          <div class="tab-item cursor-pointer flex items-center gap-2 sm:gap-4 text-neutral-500 hover:text-white transition-all p-2 rounded-lg bg-neutral-900/50 lg:bg-transparent" data-tab="2">
+            <span class="tab-dot w-2 h-2 rounded-full bg-neutral-700 transition-all flex-shrink-0"></span>
+            <span class="text-xs sm:text-base lg:text-xl truncate">03. Interactive Tools</span>
           </div>
 
-          <div class="tab-item cursor-pointer flex items-center gap-4 text-neutral-500 hover:text-white transition-all" data-tab="3">
-            <span class="tab-dot w-2 h-2 rounded-full bg-neutral-700 transition-all"></span>
-            <span class="text-lg md:text-2xl">04. SEO Engine & Ranking Proof</span>
+          <div class="tab-item cursor-pointer flex items-center gap-2 sm:gap-4 text-neutral-500 hover:text-white transition-all p-2 rounded-lg bg-neutral-900/50 lg:bg-transparent" data-tab="3">
+            <span class="tab-dot w-2 h-2 rounded-full bg-neutral-700 transition-all flex-shrink-0"></span>
+            <span class="text-xs sm:text-base lg:text-xl truncate">04. SEO Rankings</span>
           </div>
         </div>
       </div>
 
-      <!-- Right Column: Card Container -->
-      <div class="w-full md:w-2/3 h-[60vh] md:h-[70vh] relative">
+      <!-- Right Column: Interactive Card Container -->
+      <div class="w-full lg:w-2/3 h-[55vh] sm:h-[60vh] lg:h-[70vh] relative">
         
-        <!-- Card 1: Landing Pages -->
-        <div class="tab-card absolute inset-0 bg-neutral-900 border border-neutral-800 rounded-3xl p-8 flex flex-col justify-between transition-all duration-500 opacity-100 scale-100 z-10 overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-20" alt="Landing Page">
+        <!-- Card 1 -->
+        <div class="tab-card absolute inset-0 bg-neutral-900 border border-neutral-800 rounded-2xl sm:rounded-3xl p-6 sm:p-10 flex flex-col justify-between transition-all duration-500 opacity-100 scale-100 z-10 overflow-hidden shadow-xl">
           <div class="flex justify-between items-center z-10">
-            <span class="text-xs font-extrabold uppercase tracking-wider bg-orange-500/20 text-orange-400 border border-orange-500/30 px-3 py-1 rounded-full">Xindus & BIVS</span>
-            <a href="https://bivs.com/" target="_blank" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-orange-500 transition">↗</a>
+            <span class="text-[10px] sm:text-xs font-extrabold uppercase tracking-wider bg-orange-500/20 text-orange-400 border border-orange-500/30 px-3 py-1 rounded-full">Xindus & BIVS</span>
+            <a href="https://bivs.com/" target="_blank" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-orange-500 transition text-sm">↗</a>
           </div>
-          <div class="z-10 space-y-4">
-            <h2 class="text-3xl md:text-5xl font-bold leading-tight">Landing Page Layout & Live Copywriting</h2>
-            <p class="text-neutral-300 text-sm md:text-base max-w-lg leading-relaxed">
+          <div class="z-10 space-y-3 sm:space-y-4 my-auto">
+            <h2 class="text-2xl sm:text-4xl lg:text-5xl font-bold leading-tight">Landing Page Layout & Live Copywriting</h2>
+            <p class="text-neutral-300 text-xs sm:text-sm lg:text-base leading-relaxed">
               • End-to-end landing page layout design handed off directly to UI/UX engineering teams at Xindus.<br/>
               • Authored commercial web copy for BIVS platform, establishing clear product value propositions.<br/>
               • <strong>Impact:</strong> Refined user messaging flows that boosted overall conversion rates by 15%.
             </p>
-            <div class="flex gap-4 pt-2">
-              <a href="https://www.xindus.net" target="_blank" class="px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg text-xs font-bold transition">xindus.net ↗</a>
-              <a href="https://bivs.com/" target="_blank" class="px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg text-xs font-bold transition">bivs.com ↗</a>
-            </div>
+          </div>
+          <div class="flex gap-3 pt-2 z-10">
+            <a href="https://www.xindus.net" target="_blank" class="px-3 py-1.5 sm:px-4 sm:py-2 bg-white/10 hover:bg-white/20 rounded-lg text-xs font-bold transition">xindus.net ↗</a>
+            <a href="https://bivs.com/" target="_blank" class="px-3 py-1.5 sm:px-4 sm:py-2 bg-white/10 hover:bg-white/20 rounded-lg text-xs font-bold transition">bivs.com ↗</a>
           </div>
         </div>
 
-        <!-- Card 2: Demos -->
-        <div class="tab-card absolute inset-0 bg-neutral-900 border border-neutral-800 rounded-3xl p-8 flex flex-col justify-between transition-all duration-500 opacity-0 scale-95 z-0 overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-20" alt="Demos">
+        <!-- Card 2 -->
+        <div class="tab-card absolute inset-0 bg-neutral-900 border border-neutral-800 rounded-2xl sm:rounded-3xl p-6 sm:p-10 flex flex-col justify-between transition-all duration-500 opacity-0 scale-95 z-0 overflow-hidden shadow-xl">
           <div class="flex justify-between items-center z-10">
-            <span class="text-xs font-extrabold uppercase tracking-wider bg-orange-500/20 text-orange-400 border border-orange-500/30 px-3 py-1 rounded-full">Xindus Trade Networks</span>
-            <span class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">↗</span>
+            <span class="text-[10px] sm:text-xs font-extrabold uppercase tracking-wider bg-orange-500/20 text-orange-400 border border-orange-500/30 px-3 py-1 rounded-full">Xindus Trade Networks</span>
+            <span class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/10 flex items-center justify-center text-sm">↗</span>
           </div>
-          <div class="z-10 space-y-4">
-            <h2 class="text-3xl md:text-5xl font-bold leading-tight">Product Walkthroughs & Onboarding Demos</h2>
-            <p class="text-neutral-300 text-sm md:text-base max-w-lg leading-relaxed">
+          <div class="z-10 space-y-3 sm:space-y-4 my-auto">
+            <h2 class="text-2xl sm:text-4xl lg:text-5xl font-bold leading-tight">Product Walkthroughs & Onboarding Demos</h2>
+            <p class="text-neutral-300 text-xs sm:text-sm lg:text-base leading-relaxed">
               • Created visual onboarding tutorials and shipment creation explainer video walkthroughs using Canva.<br/>
               • Translated complex operational workflows into clear visual storytelling narratives for Sales, Ops, and Tech.<br/>
               • <strong>Impact:</strong> Standardized ERP/XOS communication systems and cut onboarding friction.
@@ -233,46 +224,44 @@
           </div>
         </div>
 
-        <!-- Card 3: Calculators -->
-        <div class="tab-card absolute inset-0 bg-neutral-900 border border-neutral-800 rounded-3xl p-8 flex flex-col justify-between transition-all duration-500 opacity-0 scale-95 z-0 overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-20" alt="Calculators">
+        <!-- Card 3 -->
+        <div class="tab-card absolute inset-0 bg-neutral-900 border border-neutral-800 rounded-2xl sm:rounded-3xl p-6 sm:p-10 flex flex-col justify-between transition-all duration-500 opacity-0 scale-95 z-0 overflow-hidden shadow-xl">
           <div class="flex justify-between items-center z-10">
-            <span class="text-xs font-extrabold uppercase tracking-wider bg-orange-500/20 text-orange-400 border border-orange-500/30 px-3 py-1 rounded-full">Live Interactive Web Tools</span>
-            <a href="https://xindus-indiapost-rates.netlify.app/" target="_blank" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-orange-500 transition">↗</a>
+            <span class="text-[10px] sm:text-xs font-extrabold uppercase tracking-wider bg-orange-500/20 text-orange-400 border border-orange-500/30 px-3 py-1 rounded-full">Live Interactive Web Tools</span>
+            <a href="https://xindus-indiapost-rates.netlify.app/" target="_blank" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-orange-500 transition text-sm">↗</a>
           </div>
-          <div class="z-10 space-y-4">
-            <h2 class="text-3xl md:text-5xl font-bold leading-tight">Interactive Shipment Rates Calculators</h2>
-            <p class="text-neutral-300 text-sm md:text-base max-w-lg leading-relaxed">
+          <div class="z-10 space-y-3 sm:space-y-4 my-auto">
+            <h2 class="text-2xl sm:text-4xl lg:text-5xl font-bold leading-tight">Interactive Shipment Rates Calculators</h2>
+            <p class="text-neutral-300 text-xs sm:text-sm lg:text-base leading-relaxed">
               • Built interactive pricing and duty tools from scratch using Figma wireframes and self-hosted Web Apps.<br/>
               • Solved user friction during cost estimation by turning complex multi-step rate matrices into instant self-serve tools.<br/>
               • Demonstrates tech fluency, user-centric problem solving, and rapid web prototyping.
             </p>
-            <div class="flex gap-2 flex-wrap pt-2">
-              <a href="https://xindus-indiapost-rates.netlify.app/" target="_blank" class="px-3 py-1.5 bg-white/10 hover:bg-white/20 rounded text-xs font-bold transition">IndiaPost Rates ↗</a>
-              <a href="https://xindus-lite-customers-rates.vercel.app/" target="_blank" class="px-3 py-1.5 bg-white/10 hover:bg-white/20 rounded text-xs font-bold transition">Lite Rates ↗</a>
-              <a href="https://export-duty-calculator-xindus.netlify.app/" target="_blank" class="px-3 py-1.5 bg-white/10 hover:bg-white/20 rounded text-xs font-bold transition">Export Duty Calculator ↗</a>
-            </div>
+          </div>
+          <div class="flex gap-2 flex-wrap pt-2 z-10">
+            <a href="https://xindus-indiapost-rates.netlify.app/" target="_blank" class="px-2.5 py-1 sm:px-3 sm:py-1.5 bg-white/10 hover:bg-white/20 rounded text-[11px] sm:text-xs font-bold transition">IndiaPost Rates ↗</a>
+            <a href="https://xindus-lite-customers-rates.vercel.app/" target="_blank" class="px-2.5 py-1 sm:px-3 sm:py-1.5 bg-white/10 hover:bg-white/20 rounded text-[11px] sm:text-xs font-bold transition">Lite Rates ↗</a>
+            <a href="https://export-duty-calculator-xindus.netlify.app/" target="_blank" class="px-2.5 py-1 sm:px-3 sm:py-1.5 bg-white/10 hover:bg-white/20 rounded text-[11px] sm:text-xs font-bold transition">Duty Calculator ↗</a>
           </div>
         </div>
 
-        <!-- Card 4: SEO Engine -->
-        <div class="tab-card absolute inset-0 bg-neutral-900 border border-neutral-800 rounded-3xl p-8 flex flex-col justify-between transition-all duration-500 opacity-0 scale-95 z-0 overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=1200&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-20" alt="SEO">
+        <!-- Card 4 -->
+        <div class="tab-card absolute inset-0 bg-neutral-900 border border-neutral-800 rounded-2xl sm:rounded-3xl p-6 sm:p-10 flex flex-col justify-between transition-all duration-500 opacity-0 scale-95 z-0 overflow-hidden shadow-xl">
           <div class="flex justify-between items-center z-10">
-            <span class="text-xs font-extrabold uppercase tracking-wider bg-orange-500/20 text-orange-400 border border-orange-500/30 px-3 py-1 rounded-full">All India Institute of Occult Science</span>
-            <a href="https://blog.occultscience.in/unlocking-the-secrets-of-nakshatra-and-their-lords/" target="_blank" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-orange-500 transition">↗</a>
+            <span class="text-[10px] sm:text-xs font-extrabold uppercase tracking-wider bg-orange-500/20 text-orange-400 border border-orange-500/30 px-3 py-1 rounded-full">All India Institute of Occult Science</span>
+            <a href="https://blog.occultscience.in/unlocking-the-secrets-of-nakshatra-and-their-lords/" target="_blank" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-orange-500 transition text-sm">↗</a>
           </div>
-          <div class="z-10 space-y-4">
-            <h2 class="text-3xl md:text-5xl font-bold leading-tight">225K+ Organic Impressions SEO Engine</h2>
-            <p class="text-neutral-300 text-sm md:text-base max-w-lg leading-relaxed">
+          <div class="z-10 space-y-3 sm:space-y-4 my-auto">
+            <h2 class="text-2xl sm:text-4xl lg:text-5xl font-bold leading-tight">225K+ Organic Impressions SEO Engine</h2>
+            <p class="text-neutral-300 text-xs sm:text-sm lg:text-base leading-relaxed">
               • Executed a Wikipedia citation-gap SEO strategy to secure Page 1 Google rankings across competitive queries.<br/>
               • Built and scaled a 100+ article content engine, generating over 225,260 organic impressions on top assets.<br/>
               • Earned tier-1 media coverage across Times Now, ABP, and MSN.
             </p>
-            <div class="flex gap-2 flex-wrap pt-2">
-              <a href="https://blog.occultscience.in/triangle-in-palmistry/" target="_blank" class="px-3 py-1.5 bg-white/10 hover:bg-white/20 rounded text-xs transition">Triangle Palmistry (49K Imp)</a>
-              <a href="https://blog.occultscience.in/unlocking-the-secrets-of-nakshatra-and-their-lords/" target="_blank" class="px-3 py-1.5 bg-white/10 hover:bg-white/20 rounded text-xs transition">Nakshatra Lords (225K Imp)</a>
-            </div>
+          </div>
+          <div class="flex gap-2 flex-wrap pt-2 z-10">
+            <a href="https://blog.occultscience.in/triangle-in-palmistry/" target="_blank" class="px-2.5 py-1 sm:px-3 sm:py-1.5 bg-white/10 hover:bg-white/20 rounded text-[11px] sm:text-xs transition">Triangle Palmistry (49K Imp)</a>
+            <a href="https://blog.occultscience.in/unlocking-the-secrets-of-nakshatra-and-their-lords/" target="_blank" class="px-2.5 py-1 sm:px-3 sm:py-1.5 bg-white/10 hover:bg-white/20 rounded text-[11px] sm:text-xs transition">Nakshatra Lords (225K Imp)</a>
           </div>
         </div>
 
@@ -280,113 +269,115 @@
     </div>
   </section>
 
-  <!-- 3. LIVE PROOFS & GSC METRICS GRID SECTION -->
-  <section class="py-24 px-6 md:px-16 max-w-7xl mx-auto border-t border-neutral-800">
-    <div class="mb-12">
-      <span class="text-xs font-bold uppercase tracking-widest text-orange-500">Search Console Proofs</span>
-      <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight mt-2">Verified Content Traffic & Rankings</h2>
-      <p class="text-neutral-400 mt-2">Direct search clicks and impression metrics recorded during campaign ownership.</p>
+  <!-- 3. VERIFIED PROOFS GRID -->
+  <section class="py-16 sm:py-24 px-4 sm:px-8 max-w-7xl mx-auto border-t border-neutral-800">
+    <div class="mb-8 sm:mb-12">
+      <span class="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-orange-500">Search Console Proofs</span>
+      <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight mt-2">Verified Content Traffic & Rankings</h2>
+      <p class="text-xs sm:text-base text-neutral-400 mt-2">Direct search clicks and impression metrics recorded during campaign ownership.</p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       
-      <!-- Proof Item 1 -->
-      <a href="https://blog.occultscience.in/unlocking-the-secrets-of-nakshatra-and-their-lords/" target="_blank" class="bg-neutral-900 border border-neutral-800 p-6 rounded-2xl hover:border-orange-500 transition group">
-        <div class="flex justify-between items-start mb-4">
-          <span class="text-xs text-orange-500 font-mono">225,260 IMPRESSIONS</span>
-          <span class="text-xs text-neutral-400 font-mono">744 Clicks</span>
+      <!-- Proof 1 -->
+      <a href="https://blog.occultscience.in/unlocking-the-secrets-of-nakshatra-and-their-lords/" target="_blank" class="bg-neutral-900 border border-neutral-800 p-5 rounded-2xl hover:border-orange-500 transition group">
+        <div class="flex justify-between items-start mb-3">
+          <span class="text-[10px] sm:text-xs text-orange-500 font-mono font-bold">225,260 IMPRESSIONS</span>
+          <span class="text-[10px] sm:text-xs text-neutral-400 font-mono">744 Clicks</span>
         </div>
-        <h3 class="font-bold text-lg group-hover:text-orange-400 transition">Nakshatra & Their Lords</h3>
-        <p class="text-xs text-neutral-500 mt-2 truncate">blog.occultscience.in/unlocking-the-secrets...</p>
+        <h3 class="font-bold text-base sm:text-lg group-hover:text-orange-400 transition">Nakshatra & Their Lords</h3>
+        <p class="text-[11px] text-neutral-500 mt-2 truncate">blog.occultscience.in/unlocking-the-secrets...</p>
       </a>
 
-      <!-- Proof Item 2 -->
-      <a href="https://blog.occultscience.in/knowing-about-mole-on-the-right-hand-palm-through-palmistry/" target="_blank" class="bg-neutral-900 border border-neutral-800 p-6 rounded-2xl hover:border-orange-500 transition group">
-        <div class="flex justify-between items-start mb-4">
-          <span class="text-xs text-orange-500 font-mono">75,295 IMPRESSIONS</span>
-          <span class="text-xs text-neutral-400 font-mono">461 Clicks</span>
+      <!-- Proof 2 -->
+      <a href="https://blog.occultscience.in/knowing-about-mole-on-the-right-hand-palm-through-palmistry/" target="_blank" class="bg-neutral-900 border border-neutral-800 p-5 rounded-2xl hover:border-orange-500 transition group">
+        <div class="flex justify-between items-start mb-3">
+          <span class="text-[10px] sm:text-xs text-orange-500 font-mono font-bold">75,295 IMPRESSIONS</span>
+          <span class="text-[10px] sm:text-xs text-neutral-400 font-mono">461 Clicks</span>
         </div>
-        <h3 class="font-bold text-lg group-hover:text-orange-400 transition">Right Hand Palm Moles</h3>
-        <p class="text-xs text-neutral-500 mt-2 truncate">blog.occultscience.in/knowing-about-mole...</p>
+        <h3 class="font-bold text-base sm:text-lg group-hover:text-orange-400 transition">Right Hand Palm Moles</h3>
+        <p class="text-[11px] text-neutral-500 mt-2 truncate">blog.occultscience.in/knowing-about-mole...</p>
       </a>
 
-      <!-- Proof Item 3 -->
-      <a href="https://blog.occultscience.in/palm-line-the-fate-line-and-the-sun-line/" target="_blank" class="bg-neutral-900 border border-neutral-800 p-6 rounded-2xl hover:border-orange-500 transition group">
-        <div class="flex justify-between items-start mb-4">
-          <span class="text-xs text-orange-500 font-mono">56,921 IMPRESSIONS</span>
-          <span class="text-xs text-neutral-400 font-mono">454 Clicks</span>
+      <!-- Proof 3 -->
+      <a href="https://blog.occultscience.in/palm-line-the-fate-line-and-the-sun-line/" target="_blank" class="bg-neutral-900 border border-neutral-800 p-5 rounded-2xl hover:border-orange-500 transition group">
+        <div class="flex justify-between items-start mb-3">
+          <span class="text-[10px] sm:text-xs text-orange-500 font-mono font-bold">56,921 IMPRESSIONS</span>
+          <span class="text-[10px] sm:text-xs text-neutral-400 font-mono">454 Clicks</span>
         </div>
-        <h3 class="font-bold text-lg group-hover:text-orange-400 transition">Fate Line & Sun Line</h3>
-        <p class="text-xs text-neutral-500 mt-2 truncate">blog.occultscience.in/palm-line-the-fate-line...</p>
+        <h3 class="font-bold text-base sm:text-lg group-hover:text-orange-400 transition">Fate Line & Sun Line</h3>
+        <p class="text-[11px] text-neutral-500 mt-2 truncate">blog.occultscience.in/palm-line-the-fate-line...</p>
       </a>
 
-      <!-- Proof Item 4 -->
-      <a href="https://blog.occultscience.in/divorce-line-in-female-hand-second-marriage-line-in-female-hand/" target="_blank" class="bg-neutral-900 border border-neutral-800 p-6 rounded-2xl hover:border-orange-500 transition group">
-        <div class="flex justify-between items-start mb-4">
-          <span class="text-xs text-orange-500 font-mono">55,298 IMPRESSIONS</span>
-          <span class="text-xs text-neutral-400 font-mono">1,162 Clicks</span>
+      <!-- Proof 4 -->
+      <a href="https://blog.occultscience.in/divorce-line-in-female-hand-second-marriage-line-in-female-hand/" target="_blank" class="bg-neutral-900 border border-neutral-800 p-5 rounded-2xl hover:border-orange-500 transition group">
+        <div class="flex justify-between items-start mb-3">
+          <span class="text-[10px] sm:text-xs text-orange-500 font-mono font-bold">55,298 IMPRESSIONS</span>
+          <span class="text-[10px] sm:text-xs text-neutral-400 font-mono">1,162 Clicks</span>
         </div>
-        <h3 class="font-bold text-lg group-hover:text-orange-400 transition">Female Marriage Line Analysis</h3>
-        <p class="text-xs text-neutral-500 mt-2 truncate">blog.occultscience.in/divorce-line-in-female...</p>
+        <h3 class="font-bold text-base sm:text-lg group-hover:text-orange-400 transition">Female Marriage Line Analysis</h3>
+        <p class="text-[11px] text-neutral-500 mt-2 truncate">blog.occultscience.in/divorce-line-in-female...</p>
       </a>
 
-      <!-- Proof Item 5 -->
-      <a href="https://blog.occultscience.in/triangle-in-palmistry/" target="_blank" class="bg-neutral-900 border border-neutral-800 p-6 rounded-2xl hover:border-orange-500 transition group">
-        <div class="flex justify-between items-start mb-4">
-          <span class="text-xs text-orange-500 font-mono">49,881 IMPRESSIONS</span>
-          <span class="text-xs text-neutral-400 font-mono">2,508 Clicks</span>
+      <!-- Proof 5 -->
+      <a href="https://blog.occultscience.in/triangle-in-palmistry/" target="_blank" class="bg-neutral-900 border border-neutral-800 p-5 rounded-2xl hover:border-orange-500 transition group">
+        <div class="flex justify-between items-start mb-3">
+          <span class="text-[10px] sm:text-xs text-orange-500 font-mono font-bold">49,881 IMPRESSIONS</span>
+          <span class="text-[10px] sm:text-xs text-neutral-400 font-mono">2,508 Clicks</span>
         </div>
-        <h3 class="font-bold text-lg group-hover:text-orange-400 transition">Triangle in Palmistry Guide</h3>
-        <p class="text-xs text-neutral-500 mt-2 truncate">blog.occultscience.in/triangle-in-palmistry/</p>
+        <h3 class="font-bold text-base sm:text-lg group-hover:text-orange-400 transition">Triangle in Palmistry Guide</h3>
+        <p class="text-[11px] text-neutral-500 mt-2 truncate">blog.occultscience.in/triangle-in-palmistry/</p>
       </a>
 
-      <!-- Proof Item 6 -->
-      <a href="https://blog.occultscience.in/10th-house-lord-in-different-houses/" target="_blank" class="bg-neutral-900 border border-neutral-800 p-6 rounded-2xl hover:border-orange-500 transition group">
-        <div class="flex justify-between items-start mb-4">
-          <span class="text-xs text-orange-500 font-mono">34,615 IMPRESSIONS</span>
-          <span class="text-xs text-neutral-400 font-mono">350 Clicks</span>
+      <!-- Proof 6 -->
+      <a href="https://blog.occultscience.in/10th-house-lord-in-different-houses/" target="_blank" class="bg-neutral-900 border border-neutral-800 p-5 rounded-2xl hover:border-orange-500 transition group">
+        <div class="flex justify-between items-start mb-3">
+          <span class="text-[10px] sm:text-xs text-orange-500 font-mono font-bold">34,615 IMPRESSIONS</span>
+          <span class="text-[10px] sm:text-xs text-neutral-400 font-mono">350 Clicks</span>
         </div>
-        <h3 class="font-bold text-lg group-hover:text-orange-400 transition">10th House Lord Breakdown</h3>
-        <p class="text-xs text-neutral-500 mt-2 truncate">blog.occultscience.in/10th-house-lord...</p>
+        <h3 class="font-bold text-base sm:text-lg group-hover:text-orange-400 transition">10th House Lord Breakdown</h3>
+        <p class="text-[11px] text-neutral-500 mt-2 truncate">blog.occultscience.in/10th-house-lord...</p>
       </a>
 
     </div>
   </section>
 
-  <!-- 4. KEY RESULTS & IMPACT NUMBERS -->
-  <section class="py-20 px-6 md:px-16 max-w-5xl mx-auto text-center">
-    <h2 class="text-3xl md:text-5xl font-extrabold mb-12">Measurable Impact Across Roles</h2>
+  <!-- 4. KEY RESULTS & IMPACT -->
+  <section class="py-16 sm:py-20 px-4 sm:px-8 max-w-5xl mx-auto text-center">
+    <h2 class="text-2xl sm:text-4xl md:text-5xl font-extrabold mb-8 sm:mb-12">Measurable Impact Across Roles</h2>
     
-    <div class="bg-neutral-900 border border-neutral-800 rounded-3xl p-10 md:p-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="bg-neutral-900 border border-neutral-800 rounded-3xl p-8 sm:p-12 md:p-16 grid grid-cols-1 md:grid-cols-3 gap-8 shadow-2xl">
       <div>
-        <h3 class="text-5xl font-extrabold text-orange-500 mb-2">2x</h3>
-        <p class="text-sm text-neutral-400">Weekly Revenue Growth at Xindus (₹6L → ₹12L) via segment messaging</p>
+        <h3 class="text-4xl sm:text-5xl font-extrabold text-orange-500 mb-2">2x</h3>
+        <p class="text-xs sm:text-sm text-neutral-400">Weekly Revenue Growth at Xindus (₹6L → ₹12L) via segment messaging</p>
       </div>
       <div>
-        <h3 class="text-5xl font-extrabold text-orange-500 mb-2">110</h3>
-        <p class="text-sm text-neutral-400">Enterprise Accounts Won Back via objection-analysis campaigns</p>
+        <h3 class="text-4xl sm:text-5xl font-extrabold text-orange-500 mb-2">110</h3>
+        <p class="text-xs sm:text-sm text-neutral-400">Enterprise Accounts Won Back via objection-analysis campaigns</p>
       </div>
       <div>
-        <h3 class="text-5xl font-extrabold text-orange-500 mb-2">225K+</h3>
-        <p class="text-sm text-neutral-400">Organic Impressions & Page 1 Google Rankings generated</p>
+        <h3 class="text-4xl sm:text-5xl font-extrabold text-orange-500 mb-2">225K+</h3>
+        <p class="text-xs sm:text-sm text-neutral-400">Organic Impressions & Page 1 Google Rankings generated</p>
       </div>
     </div>
   </section>
 
-  <!-- 5. FOOTER CTA -->
-  <footer id="contact" class="footer-gradient pt-24 pb-12 px-6 md:px-16 rounded-t-[3rem]">
-    <div class="max-w-6xl mx-auto flex flex-col justify-between min-h-[60vh]">
+  <!-- 5. FOOTER -->
+  <footer id="contact" class="footer-gradient pt-16 sm:pt-24 pb-8 sm:pb-12 px-6 sm:px-12 rounded-t-[2.5rem] sm:rounded-t-[3rem]">
+    <div class="max-w-6xl mx-auto flex flex-col justify-between min-h-[50vh] sm:min-h-[60vh]">
       <div>
-        <span class="text-xs uppercase tracking-widest text-neutral-300">LET'S BUILD TOGETHER</span>
-        <h2 class="text-5xl md:text-8xl font-extrabold tracking-tight mt-4 mb-8">Ready to Turn Product Ideas <br/>Into Winning Stories?</h2>
+        <span class="text-[10px] sm:text-xs uppercase tracking-widest text-neutral-300 font-bold">LET'S BUILD TOGETHER</span>
+        <h2 class="text-3xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight mt-4 mb-8 text-white leading-tight">
+          Ready to Turn Product Ideas <br class="hidden sm:block"/>Into Winning Stories?
+        </h2>
       </div>
 
-      <div class="flex flex-col md:flex-row justify-between items-end border-t border-white/20 pt-8 gap-6">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-end border-t border-white/20 pt-8 gap-6">
         <div>
-          <p class="text-xl font-bold">+91 98184 82508</p>
-          <a href="mailto:ktanishqq17@gmail.com" class="text-neutral-300 hover:text-white transition">ktanishqq17@gmail.com</a>
+          <p class="text-lg sm:text-xl font-bold">+91 98184 82508</p>
+          <a href="mailto:ktanishqq17@gmail.com" class="text-neutral-300 hover:text-white transition text-sm sm:text-base">ktanishqq17@gmail.com</a>
         </div>
-        <p class="text-sm text-neutral-400">© Tanishq Kumar. Product Marketing Specialist Portfolio.</p>
+        <p class="text-xs sm:text-sm text-neutral-400">© Tanishq Kumar. Product Marketing Specialist Portfolio.</p>
       </div>
     </div>
   </footer>
@@ -402,13 +393,13 @@
     function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
     requestAnimationFrame(raf);
 
-    // 2. Register GSAP Plugins
+    // 2. Register GSAP
     gsap.registerPlugin(ScrollTrigger);
 
-    // --- ANIMATION 1: Hero Card Shrink & Scroll Parallax ---
+    // Hero Shrink Effect
     gsap.to('#heroCard', {
-      scale: 0.65,
-      borderRadius: '2.5rem',
+      scale: 0.88,
+      borderRadius: '2rem',
       scrollTrigger: {
         trigger: '.hero-pin-wrapper',
         start: 'top top',
@@ -417,48 +408,20 @@
       }
     });
 
-    // Image Parallax scroll delay (makes image float/flow vertically on scroll)
-    gsap.to('#heroImage', {
-      y: -120,
-      scale: 1.08,
-      scrollTrigger: {
-        trigger: '.hero-pin-wrapper',
-        start: 'top top',
-        end: 'bottom top',
-        scrub: 1.5
-      }
-    });
-
-    // --- ANIMATION 2: Interactive Mouse Movement Parallax & Cursor Tracer ---
+    // Custom Cursor Follower (Only for Desktops/Laptops)
     const tracer = document.getElementById('tracer');
-    const heroImg = document.getElementById('heroImage');
-    const heroCard = document.getElementById('heroCard');
-
-    window.addEventListener('mousemove', (e) => {
-      // 1. Smooth Custom Cursor Tracer Follower
-      gsap.to(tracer, {
-        x: e.clientX,
-        y: e.clientY,
-        duration: 0.25,
-        ease: 'power2.out'
+    if (window.matchMedia('(pointer: fine)').matches && tracer) {
+      window.addEventListener('mousemove', (e) => {
+        gsap.to(tracer, {
+          x: e.clientX,
+          y: e.clientY,
+          duration: 0.2,
+          ease: 'power2.out'
+        });
       });
+    }
 
-      // 2. Interactive Image Movement on Mouse Hover
-      const { innerWidth, innerHeight } = window;
-      const xPercent = (e.clientX / innerWidth - 0.5) * 40; // Horizontal shift amount
-      const yPercent = (e.clientY / innerHeight - 0.5) * 30; // Vertical shift amount
-
-      gsap.to(heroImg, {
-        x: xPercent,
-        y: yPercent,
-        rotation: xPercent * 0.1,
-        duration: 0.8,
-        ease: 'power2.out',
-        overwrite: 'auto'
-      });
-    });
-
-    // --- ANIMATION 3: Pinned Tab-Based Showcase ---
+    // Tab Switching Mechanism
     const tabs = document.querySelectorAll('.tab-item');
     const cards = document.querySelectorAll('.tab-card');
 
@@ -469,11 +432,11 @@
           tab.classList.remove('text-neutral-500');
           tab.classList.add('text-orange-500');
           dot.classList.remove('bg-neutral-700', 'w-2', 'h-2');
-          dot.classList.add('bg-orange-500', 'w-3', 'h-3');
+          dot.classList.add('bg-orange-500', 'w-2.5', 'h-2.5');
         } else {
           tab.classList.remove('text-orange-500');
           tab.classList.add('text-neutral-500');
-          dot.classList.remove('bg-orange-500', 'w-3', 'h-3');
+          dot.classList.remove('bg-orange-500', 'w-2.5', 'h-2.5');
           dot.classList.add('bg-neutral-700', 'w-2', 'h-2');
         }
       });
@@ -489,7 +452,7 @@
       });
     }
 
-    // ScrollTrigger to cycle tabs based on scroll progress through pinned wrapper
+    // ScrollTrigger Tab Switcher
     ScrollTrigger.create({
       trigger: '.tabs-pin-wrapper',
       start: 'top top',
@@ -503,7 +466,7 @@
       }
     });
 
-    // Allow Manual Tab Clicks
+    // Manual Clicks
     tabs.forEach((tab, index) => {
       tab.addEventListener('click', () => {
         setActiveTab(index);
